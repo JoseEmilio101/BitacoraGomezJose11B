@@ -3,143 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora Tecnologia Gómez</title>
-    <link rel="icon" type="image/png" href="https://www.capouilliez.edu.gt/assets/img/logo.png">
+    <title>Bitácora Tecnología Gómez</title>
+
+    <link rel="icon" type="image/png"
+        href="https://www.capouilliez.edu.gt/assets/img/logo.png">
+
     <style>
-    html,body{
-      height: 100%;
-      margin: 0;
-      font-family: Arial, sans-serif;
-      }
-    body{
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      }
-      header{
-        padding: 20px;
-        background-color: chocolate;
-      }
-      main{
-        flex: 1;
-        padding: 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-      footer{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 15px 50px;
-        border-top: 10px  solid chartreuse;
-        background-color: darkcyan; 
-      }
-      @media{max-width: 600px}{
-        footer{
-          flex-direction: column;
-          gap: 15px;
-          padding: 20px;
+
+        html, body{
+            height:100%;
+            margin:0;
+            font-family:Arial, sans-serif;
         }
-      }
-      h1 {
-    color: #ffffff; /* Blanco puro */
-    text-align: center;
-    margin: 0;
-    /* Sombra ultra-potente */
-    text-shadow: 
-      0 0 5px #fff, 
-      0 0 10px #ffcc00, 
-      0 0 20px #ffcc00, 
-      0 0 40px #ffcc00, 
-      0 0 80px #ffcc00, 
-      0 0 100px #ffcc00 ; 
-    }
-    /* INSTRUCCIÓN 2: Efecto Zoom en el logo */
-    footer img {
-        height: 50px; /* Tamaño base */
-        transition: transform 0.3s ease; /* Para que el zoom sea suave */
-    }
 
-    footer img:hover {
-        transform: scale(1.2); /* Se hace 20% más grande al pasar el mouse */
-    }
-    .semana {
-      background-color: white;
-      border-radius: 15px;
-      padding: 25px;
-      margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      border-left: 10px solid darkcyan;
-      text-align: left;
-      transition: transform 0.3s ease;
-  }
-  .semana:hover {
-      transform: translateY(-5px);
-  }
-      <style>
+        body{
+            display:flex;
+            flex-direction:column;
+            text-align:center;
+            background:#f4f4f4;
+        }
 
-</style>
+        header{
+            padding:20px;
+            background-color:chocolate;
+        }
+
+        main{
+            flex:1;
+            padding:20px;
+            max-width:1200px;
+            margin:0 auto;
+        }
+
+        footer{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 50px;
+            border-top:10px solid chartreuse;
+            background-color:darkcyan;
+        }
+
+        @media (max-width:600px){
+            footer{
+                flex-direction:column;
+                gap:15px;
+                padding:20px;
+            }
+        }
+
+        h1{
+            color:white;
+            margin:0;
+            text-shadow:
+                0 0 5px #fff,
+                0 0 10px #ffcc00,
+                0 0 20px #ffcc00,
+                0 0 40px #ffcc00,
+                0 0 80px #ffcc00,
+                0 0 100px #ffcc00;
+        }
+
+        footer img{
+            height:50px;
+            transition:transform .3s;
+        }
+
+        footer img:hover{
+            transform:scale(1.2);
+        }
+
+        .semana{
+            background:white;
+            border-radius:15px;
+            padding:25px;
+            margin:20px auto;
+            max-width:700px;
+            box-shadow:0 10px 20px rgba(0,0,0,.15);
+            border-left:10px solid darkcyan;
+            text-align:left;
+            transition:.3s;
+        }
+
+        .semana:hover{
+            transform:translateY(-5px);
+        }
+
+        video{
+            width:100%;
+            border-radius:10px;
+            margin-top:10px;
+        }
+
     </style>
 </head>
+
 <body>
-  <header> 
-    <h1>Encabezado de mi pagina web</h1>
-  </header>
-  <main>
-  <h4>Contenido de mi pagina web</h4> 
-  <div class="semana">
+
+<header>
+    <h1>Bitácora Tecnología Gómez</h1>
+</header>
+
+<main>
+
+    <h2>Contenido de mi página web</h2>
+
+    <!-- Semana 1 -->
+    <div class="semana">
         <h3>Semana 1: Mi Bitácora</h3>
         <p>¡Este es el contenido de mi primera tarjeta elegante!</p>
     </div>
 
+    <!-- Semana 2 -->
     <div class="semana">
-    <h3>Semana 2: Introducción robótica</h3>
+        <h3>Semana 2: Introducción a Robótica</h3>
 
+        <video controls>
+            <source src="recursos/thinkercard.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
 
-    <video width="100%" controls>
-        <source src="recursos/thinkercard.mp4" type="video/mp4">
-    </video>
+        <p><b>Hecho en Tinkercad</b></p>
+    </div>
 
-    <p><b>Hecho en Tinkercad</b></p>
-
-        <div class="semana">
-    <h3>Semana 4: Semáforo</h3>
-
-    <video width="100%" controls>
-        <source src="recursos/Semana 4.mov" type="video/mp4">
-        
-    </video>
-
+    <!-- Semana 4 -->
     <div class="semana">
-    <h3>Semana 6: Sensor de distancia</h3>
+        <h3>Semana 4: Semáforo</h3>
 
-    <video width="100%" controls>
-        <source src="recursosSensor de distancia (2).mp4" type="video/mp4">
-       
-    </video>
+        <video controls>
+            <source src="recursos/Semana 4.mov" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
 
-    <p>hecho en Thinkercad</p>
+        <p><b>Hecho en Tinkercad</b></p>
+    </div>
 
-        <div class="semana">
-    <h3>Semana 7: Sensor PIR</h3>
+    <!-- Semana 6 -->
+    <div class="semana">
+        <h3>Semana 6: Sensor de distancia</h3>
 
-    <video width="100%" controls>
-        <source src="recursos/Sensor PIR.mp4" type="video/mp4">
-        
-    </video>
+        <video controls>
+            <source src="recursos/Sensor de distancia (2).mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
 
-   
-</div>
-</div>
-</div>
-</div>
+        <p><b>Hecho en Tinkercad</b></p>
+    </div>
 
-  </main>
+    <!-- Semana 7 -->
+    <div class="semana">
+        <h3>Semana 7: Sensor PIR</h3>
 
-  <footer>
-    <span>2026 @MARIORABBID</span>
-  <img src="https://www.capouilliez.edu.gt/assets/img/logo.png" alt="">
-  </footer>
+        <video controls>
+            <source src="recursos/Sensor PIR.mp4" type="video/mp4">
+            Tu navegador no soporta videos.
+        </video>
+
+        <p><b>Hecho en Tinkercad</b></p>
+    </div>
+
+</main>
+
+<footer>
+    <span>2026 © MARIORABBID</span>
+
+    <img src="https://www.capouilliez.edu.gt/assets/img/logo.png"
+         alt="Logo">
+</footer>
+
 </body>
 </html>
