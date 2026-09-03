@@ -3,173 +3,1576 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bitácora Tecnología Gómez</title>
 
-    <link rel="icon" type="image/png"
-        href="https://www.capouilliez.edu.gt/assets/img/logo.png">
+    <title>IRTRA SafeZone | Sistema de Seguridad Inteligente</title>
+
+    <meta name="description"
+          content="IRTRA SafeZone - Sistema autónomo de detección de proximidad y alerta para zonas restringidas del IRTRA Petapa.">
 
     <style>
+        /* =====================================================
+           CONFIGURACIÓN GENERAL
+        ===================================================== */
 
-        html, body{
-            height:100%;
-            margin:0;
-            font-family:Arial, sans-serif;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        body{
-            display:flex;
-            flex-direction:column;
-            text-align:center;
-            background:#f4f4f4;
+        html {
+            scroll-behavior: smooth;
         }
 
-        header{
-            padding:20px;
-            background-color:chocolate;
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #070b12;
+            color: #f4f7fb;
+            overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        main{
-            flex:1;
-            padding:20px;
-            max-width:1200px;
-            margin:0 auto;
+        a {
+            color: inherit;
+            text-decoration: none;
         }
 
-        footer{
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:15px 50px;
-            border-top:10px solid chartreuse;
-            background-color:darkcyan;
+        .container {
+            width: min(1150px, 90%);
+            margin: auto;
         }
 
-        @media (max-width:600px){
-            footer{
-                flex-direction:column;
-                gap:15px;
-                padding:20px;
+        /* =====================================================
+           FONDO ANIMADO
+        ===================================================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -2;
+
+            background:
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.08), transparent 25%),
+                radial-gradient(circle at 90% 30%, rgba(0, 150, 255, 0.08), transparent 25%),
+                radial-gradient(circle at 50% 100%, rgba(255, 60, 80, 0.06), transparent 30%);
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.12;
+
+            background-image:
+                linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+
+            background-size: 45px 45px;
+        }
+
+        /* =====================================================
+           NAVEGACIÓN
+        ===================================================== */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7, 11, 18, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,.08);
+        }
+
+        .nav-content {
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #00e5a0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #b8c2d1;
+            font-size: .9rem;
+            transition: .3s;
+        }
+
+        .nav-links a:hover {
+            color: #00e5a0;
+        }
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 15px;
+            margin-bottom: 25px;
+
+            border: 1px solid rgba(0,229,160,.3);
+            border-radius: 100px;
+
+            background: rgba(0,229,160,.07);
+            color: #00e5a0;
+
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .5px;
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            background: #00e5a0;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #00e5a0;
+            animation: pulse 1.7s infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.7);
+                opacity: .5;
             }
         }
 
-        h1{
-            color:white;
-            margin:0;
-            text-shadow:
-                0 0 5px #fff,
-                0 0 10px #ffcc00,
-                0 0 20px #ffcc00,
-                0 0 40px #ffcc00,
-                0 0 80px #ffcc00,
-                0 0 100px #ffcc00;
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            line-height: .95;
+            letter-spacing: -4px;
+            margin-bottom: 25px;
         }
 
-        footer img{
-            height:50px;
-            transition:transform .3s;
+        .hero h1 span {
+            color: #00e5a0;
+            text-shadow: 0 0 30px rgba(0,229,160,.25);
         }
 
-        footer img:hover{
-            transform:scale(1.2);
+        .hero-description {
+            max-width: 680px;
+            color: #aab5c5;
+            font-size: 1.15rem;
+            margin-bottom: 35px;
         }
 
-        .semana{
-            background:white;
-            border-radius:15px;
-            padding:25px;
-            margin:20px auto;
-            max-width:700px;
-            box-shadow:0 10px 20px rgba(0,0,0,.15);
-            border-left:10px solid darkcyan;
-            text-align:left;
-            transition:.3s;
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
         }
 
-        .semana:hover{
-            transform:translateY(-5px);
+        .btn {
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: 700;
+            transition: .3s;
+            display: inline-block;
         }
 
-        video{
-            width:100%;
-            border-radius:10px;
-            margin-top:10px;
+        .btn-primary {
+            background: #00e5a0;
+            color: #04110c;
         }
 
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(0,229,160,.25);
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255,255,255,.15);
+            color: #dce4ef;
+            background: rgba(255,255,255,.03);
+        }
+
+        .btn-secondary:hover {
+            border-color: #00e5a0;
+            transform: translateY(-3px);
+        }
+
+        /* =====================================================
+           ESTADÍSTICAS
+        ===================================================== */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 15px;
+            margin-top: 65px;
+        }
+
+        .stat {
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.025);
+            border-radius: 12px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 1.7rem;
+            color: #fff;
+        }
+
+        .stat span {
+            color: #8490a2;
+            font-size: .85rem;
+        }
+
+        /* =====================================================
+           SECCIONES
+        ===================================================== */
+
+        section {
+            padding: 110px 0;
+        }
+
+        .section-header {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .section-label {
+            color: #00e5a0;
+            font-size: .75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3.3rem);
+            line-height: 1.05;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            color: #919dae;
+        }
+
+        /* =====================================================
+           PROBLEMA
+        ===================================================== */
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 25px;
+        }
+
+        .glass-card {
+            border: 1px solid rgba(255,255,255,.09);
+            background: rgba(255,255,255,.035);
+            border-radius: 18px;
+            padding: 30px;
+        }
+
+        .glass-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .glass-card p {
+            color: #9ca8b9;
+        }
+
+        .risk {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,.07);
+        }
+
+        .risk:last-child {
+            border-bottom: 0;
+        }
+
+        .risk-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: rgba(255,255,255,.05);
+            font-size: 1.2rem;
+        }
+
+        /* =====================================================
+           FUNCIONAMIENTO
+        ===================================================== */
+
+        .flow {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+        }
+
+        .flow-card {
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 15px;
+            background: rgba(255,255,255,.025);
+            position: relative;
+        }
+
+        .flow-number {
+            color: #00e5a0;
+            font-weight: 900;
+            font-size: .8rem;
+            margin-bottom: 18px;
+        }
+
+        .flow-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .flow-card p {
+            color: #8995a7;
+            font-size: .9rem;
+        }
+
+        /* =====================================================
+           NIVELES DE SEGURIDAD
+        ===================================================== */
+
+        .levels {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 20px;
+        }
+
+        .level {
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.025);
+            transition: .3s;
+        }
+
+        .level:hover {
+            transform: translateY(-6px);
+        }
+
+        .level-light {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .green {
+            background: #00e58a;
+            box-shadow: 0 0 25px rgba(0,229,138,.5);
+        }
+
+        .yellow {
+            background: #ffd21f;
+            box-shadow: 0 0 25px rgba(255,210,31,.45);
+        }
+
+        .red {
+            background: #ff4055;
+            box-shadow: 0 0 25px rgba(255,64,85,.5);
+        }
+
+        .level h3 {
+            margin-bottom: 8px;
+        }
+
+        .distance {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .level p {
+            color: #8d99aa;
+            font-size: .9rem;
+        }
+
+        /* =====================================================
+           COMPONENTES
+        ===================================================== */
+
+        .components {
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+        }
+
+        .component {
+            text-align: center;
+            padding: 25px 15px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.025);
+            border-radius: 15px;
+        }
+
+        .component-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .component p {
+            color: #8793a5;
+            font-size: .85rem;
+        }
+
+        /* =====================================================
+           ODS
+        ===================================================== */
+
+        .ods {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .ods-card {
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid rgba(255,255,255,.09);
+            background: linear-gradient(
+                135deg,
+                rgba(0,229,160,.08),
+                rgba(255,255,255,.02)
+            );
+        }
+
+        .ods-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #00e5a0;
+        }
+
+        .ods-card p {
+            color: #99a5b6;
+            margin-top: 10px;
+        }
+
+        /* =====================================================
+           CIRCUITO
+        ===================================================== */
+
+        .circuit-box {
+            min-height: 350px;
+            border: 1px dashed rgba(0,229,160,.3);
+            border-radius: 20px;
+            display: grid;
+            place-items: center;
+            background:
+                radial-gradient(circle, rgba(0,229,160,.06), transparent 60%);
+            text-align: center;
+            padding: 30px;
+        }
+
+        .circuit-box .placeholder {
+            max-width: 600px;
+        }
+
+        .circuit-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .circuit-box p {
+            color: #8e9aaa;
+            margin-bottom: 20px;
+        }
+
+        /* =====================================================
+           PODCAST
+        ===================================================== */
+
+        .podcast {
+            display: grid;
+            grid-template-columns: 1fr .8fr;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .podcast-card {
+            padding: 40px;
+            border-radius: 20px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,160,.12),
+                    rgba(0,150,255,.06)
+                );
+
+            border: 1px solid rgba(0,229,160,.2);
+        }
+
+        .podcast-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .podcast-card p {
+            color: #9ca8b9;
+            margin-bottom: 25px;
+        }
+
+        .audio-visual {
+            height: 220px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .bar {
+            width: 7px;
+            height: 35px;
+            border-radius: 10px;
+            background: #00e5a0;
+            animation: sound 1s ease-in-out infinite alternate;
+        }
+
+        .bar:nth-child(2) { animation-delay: .1s; }
+        .bar:nth-child(3) { animation-delay: .2s; }
+        .bar:nth-child(4) { animation-delay: .3s; }
+        .bar:nth-child(5) { animation-delay: .4s; }
+        .bar:nth-child(6) { animation-delay: .2s; }
+        .bar:nth-child(7) { animation-delay: .1s; }
+
+        @keyframes sound {
+            from {
+                height: 20px;
+                opacity: .5;
+            }
+
+            to {
+                height: 100px;
+                opacity: 1;
+            }
+        }
+
+        /* =====================================================
+           EQUIPO
+        ===================================================== */
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+        }
+
+        .member {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: rgba(255,255,255,.025);
+            border-radius: 16px;
+        }
+
+        .avatar {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            font-size: 1.4rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #00e5a0, #0077ff);
+            color: #fff;
+        }
+
+        .member span {
+            color: #8290a2;
+            font-size: .85rem;
+        }
+
+        /* =====================================================
+           CTA FINAL
+        ===================================================== */
+
+        .final {
+            text-align: center;
+            padding: 120px 0;
+        }
+
+        .final h2 {
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            margin-bottom: 15px;
+        }
+
+        .final p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #8e9aaa;
+        }
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,.07);
+            color: #667386;
+            font-size: .85rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .problem-grid,
+            .podcast,
+            .ods {
+                grid-template-columns: 1fr;
+            }
+
+            .flow {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .levels {
+                grid-template-columns: 1fr;
+            }
+
+            .components {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .team {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                letter-spacing: -2px;
+            }
+
+            .flow {
+                grid-template-columns: 1fr;
+            }
+
+            .components {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Bitácora Tecnología Gómez</h1>
-</header>
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<nav>
+    <div class="container nav-content">
+
+        <a href="#inicio" class="logo">
+            IRTRA<span>SafeZone</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#problema">Problema</a></li>
+            <li><a href="#funcionamiento">Funcionamiento</a></li>
+            <li><a href="#circuito">Circuito</a></li>
+            <li><a href="#ods">ODS</a></li>
+            <li><a href="#podcast">Podcast</a></li>
+        </ul>
+
+    </div>
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <main>
 
-    <h2>Contenido de mi página web</h2>
+<section class="hero" id="inicio">
 
-    <!-- Semana 1 -->
-    <div class="semana">
-        <h3>Semana 1: Mi Bitácora</h3>
-        <p>¡Este es el contenido de mi primera tarjeta elegante!</p>
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                <span class="pulse"></span>
+                SISTEMA DE SEGURIDAD AUTOMATIZADO
+            </div>
+
+            <h1>
+                IRTRA<br>
+                <span>SafeZone</span>
+            </h1>
+
+            <p class="hero-description">
+                Sistema autónomo de detección de proximidad y alerta
+                diseñado para proteger zonas de acceso restringido
+                dentro del IRTRA Petapa.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#funcionamiento" class="btn btn-primary">
+                    Explorar proyecto
+                </a>
+
+                <a href="#podcast" class="btn btn-secondary">
+                    🎙 Escuchar podcast
+                </a>
+
+            </div>
+
+            <div class="stats">
+
+                <div class="stat">
+                    <strong>100 cm</strong>
+                    <span>Inicio de zona de advertencia</span>
+                </div>
+
+                <div class="stat">
+                    <strong>50 cm</strong>
+                    <span>Inicio de zona de peligro</span>
+                </div>
+
+                <div class="stat">
+                    <strong>Arduino</strong>
+                    <span>Control principal del sistema</span>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-   
-    <div class="semana">
-        <h3>Semana 2: Introducción a Robótica</h3>
+</section>
 
-        <video controls>
-            <source src="recursos/thinkercard.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
-        </video>
 
-        <p><b>Hecho en Tinkercad</b></p>
+<!-- =====================================================
+     PROBLEMÁTICA
+===================================================== -->
+
+<section id="problema">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                01 / Problemática
+            </div>
+
+            <h2 class="section-title">
+                Seguridad antes de que ocurra el problema.
+            </h2>
+
+            <p class="section-description">
+                En un parque de atracciones existen áreas técnicas,
+                de mantenimiento y otros espacios que deben permanecer
+                restringidos para los visitantes.
+            </p>
+
+        </div>
+
+
+        <div class="problem-grid">
+
+            <div class="glass-card">
+
+                <h3>El reto</h3>
+
+                <p>
+                    Una persona que se aproxima demasiado a una zona
+                    restringida puede representar un riesgo para su
+                    propia seguridad o para el funcionamiento de las
+                    instalaciones.
+                </p>
+
+                <br>
+
+                <p>
+                    IRTRA SafeZone propone un sistema capaz de detectar
+                    la distancia de una persona respecto al área
+                    restringida y emitir una alerta proporcional
+                    al nivel de riesgo.
+                </p>
+
+            </div>
+
+
+            <div class="glass-card">
+
+                <div class="risk">
+                    <div class="risk-icon">⚠️</div>
+                    <div>
+                        <strong>Acceso no autorizado</strong>
+                        <br>
+                        <small>Una persona se aproxima a una zona restringida.</small>
+                    </div>
+                </div>
+
+                <div class="risk">
+                    <div class="risk-icon">📡</div>
+                    <div>
+                        <strong>Detección automática</strong>
+                        <br>
+                        <small>El sensor mide constantemente la distancia.</small>
+                    </div>
+                </div>
+
+                <div class="risk">
+                    <div class="risk-icon">🔊</div>
+                    <div>
+                        <strong>Alerta inmediata</strong>
+                        <br>
+                        <small>LEDs y buzzer comunican el nivel de riesgo.</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
-    
-    <div class="semana">
-        <h3>Semana 4: Semáforo</h3>
+</section>
 
-        <video controls>
-            <source src="recursos/Semana 4.mov" type="video/mp4">
-            
-        </video>
 
-        <p><b>Hecho en Tinkercad</b></p>
+<!-- =====================================================
+     FUNCIONAMIENTO
+===================================================== -->
+
+<section id="funcionamiento">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                02 / Funcionamiento
+            </div>
+
+            <h2 class="section-title">
+                De la distancia a una alerta.
+            </h2>
+
+            <p class="section-description">
+                El sistema transforma la información obtenida por
+                el sensor ultrasónico en una respuesta visual y sonora.
+            </p>
+
+        </div>
+
+
+        <div class="flow">
+
+            <div class="flow-card">
+                <div class="flow-number">01</div>
+                <h3>Detección</h3>
+                <p>
+                    El sensor ultrasónico HC-SR04 mide la distancia
+                    de la persona.
+                </p>
+            </div>
+
+            <div class="flow-card">
+                <div class="flow-number">02</div>
+                <h3>Procesamiento</h3>
+                <p>
+                    Arduino recibe la información y determina
+                    el nivel de seguridad.
+                </p>
+            </div>
+
+            <div class="flow-card">
+                <div class="flow-number">03</div>
+                <h3>Señal visual</h3>
+                <p>
+                    Uno de los tres LEDs indica si el estado es
+                    seguro, preventivo o peligroso.
+                </p>
+            </div>
+
+            <div class="flow-card">
+                <div class="flow-number">04</div>
+                <h3>Alerta sonora</h3>
+                <p>
+                    El buzzer cambia su comportamiento según
+                    la proximidad detectada.
+                </p>
+            </div>
+
+        </div>
+
     </div>
 
-    
-    <div class="semana">
-        <h3>Semana 6: Sensor de distancia</h3>
+</section>
 
-        <video controls>
-            <source src="recursos/Sensor de distancia (2).mp4" type="video/mp4">
-            
-        </video>
 
-        <p><b>Hecho en Tinkercad</b></p>
+<!-- =====================================================
+     NIVELES
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                03 / Niveles de seguridad
+            </div>
+
+            <h2 class="section-title">
+                Tres distancias. Tres respuestas.
+            </h2>
+
+        </div>
+
+
+        <div class="levels">
+
+            <div class="level">
+
+                <div class="level-light green"></div>
+
+                <div class="distance">
+                    &gt; 100 cm
+                </div>
+
+                <h3>Zona segura</h3>
+
+                <p>
+                    El LED verde permanece encendido.
+                    El buzzer permanece apagado.
+                </p>
+
+            </div>
+
+
+            <div class="level">
+
+                <div class="level-light yellow"></div>
+
+                <div class="distance">
+                    50 – 100 cm
+                </div>
+
+                <h3>Zona de advertencia</h3>
+
+                <p>
+                    Se activa el LED amarillo y el buzzer
+                    genera una alerta moderada y pausada.
+                </p>
+
+            </div>
+
+
+            <div class="level">
+
+                <div class="level-light red"></div>
+
+                <div class="distance">
+                    &lt; 50 cm
+                </div>
+
+                <h3>Zona de peligro</h3>
+
+                <p>
+                    Se activa el LED rojo y el buzzer aumenta
+                    la velocidad de su alerta.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
 
-   
-    <div class="semana">
-        <h3>Semana 7: Sensor PIR</h3>
+</section>
 
-        <video controls>
-            <source src="recursos/Sensor PIR.mp4" type="video/mp4">
-            Tu navegador no soporta videos.
-        </video>
 
-        <p><b>Hecho en Tinkercad</b></p>
+<!-- =====================================================
+     COMPONENTES
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                04 / Tecnología
+            </div>
+
+            <h2 class="section-title">
+                Los componentes detrás del sistema.
+            </h2>
+
+        </div>
+
+
+        <div class="components">
+
+            <div class="component">
+
+                <div class="component-icon">🧠</div>
+
+                <h3>Arduino Uno R3</h3>
+
+                <p>
+                    Procesa la información y controla
+                    las respuestas del sistema.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <div class="component-icon">📡</div>
+
+                <h3>HC-SR04</h3>
+
+                <p>
+                    Sensor ultrasónico encargado
+                    de medir la distancia.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <div class="component-icon">💡</div>
+
+                <h3>LEDs</h3>
+
+                <p>
+                    Representan visualmente los
+                    diferentes niveles de seguridad.
+                </p>
+
+            </div>
+
+
+            <div class="component">
+
+                <div class="component-icon">🔊</div>
+
+                <h3>Buzzer</h3>
+
+                <p>
+                    Produce la alerta sonora
+                    cuando aumenta el riesgo.
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
+
+</section>
+
+
+<!-- =====================================================
+     CIRCUITO TINKERCAD
+===================================================== -->
+
+<section id="circuito">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                05 / Prototipo
+            </div>
+
+            <h2 class="section-title">
+                Del concepto al circuito.
+            </h2>
+
+            <p class="section-description">
+                El prototipo fue diseñado y probado mediante
+                Tinkercad Circuits utilizando Arduino Uno R3
+                y programación en C++.
+            </p>
+
+        </div>
+
+
+        <div class="circuit-box">
+
+            <div class="placeholder">
+
+                <div style="font-size: 3rem; margin-bottom: 15px;">
+                    ⚡
+                </div>
+
+                <h3>
+                    Circuito IRTRA SafeZone
+                </h3>
+
+                <p>
+                    Aquí pueden colocar una captura legible
+                    del circuito realizado en Tinkercad.
+                </p>
+
+                <!--
+                    PARA AGREGAR LA IMAGEN:
+
+                    1. Suban la captura al repositorio.
+                    2. Por ejemplo:
+                       circuito.png
+
+                    3. Reemplacen este bloque por:
+
+                    <img src="circuito.png"
+                         alt="Circuito IRTRA SafeZone"
+                         style="max-width:100%; border-radius:12px;">
+                -->
+
+                <a href="#podcast" class="btn btn-primary">
+                    Ver documentación
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ODS
+===================================================== -->
+
+<section id="ods">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                06 / Impacto
+            </div>
+
+            <h2 class="section-title">
+                Tecnología con propósito.
+            </h2>
+
+            <p class="section-description">
+                El proyecto relaciona la automatización y la innovación
+                tecnológica con los Objetivos de Desarrollo Sostenible.
+            </p>
+
+        </div>
+
+
+        <div class="ods">
+
+            <div class="ods-card">
+
+                <div class="ods-number">
+                    ODS 9
+                </div>
+
+                <h3>
+                    Industria, innovación e infraestructura
+                </h3>
+
+                <p>
+                    El proyecto utiliza automatización, electrónica
+                    y programación para desarrollar una solución
+                    tecnológica frente a una problemática de seguridad.
+                </p>
+
+            </div>
+
+
+            <div class="ods-card">
+
+                <div class="ods-number">
+                    ODS 11
+                </div>
+
+                <h3>
+                    Ciudades y comunidades sostenibles
+                </h3>
+
+                <p>
+                    La propuesta busca contribuir a una mejor gestión
+                    y seguridad de espacios utilizados por las personas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PODCAST
+===================================================== -->
+
+<section id="podcast">
+
+    <div class="container">
+
+        <div class="podcast">
+
+            <div class="podcast-card">
+
+                <div class="podcast-icon">
+                    🎙️
+                </div>
+
+                <div class="section-label">
+                    Podcast del proyecto
+                </div>
+
+                <h2 class="section-title">
+                    Escucha cómo funciona SafeZone.
+                </h2>
+
+                <p>
+                    Conoce la problemática, el funcionamiento del
+                    circuito, sus componentes, los niveles de alerta
+                    y el impacto del proyecto.
+                </p>
+
+                <!--
+                    CAMBIAR ESTE ENLACE
+
+                    Coloca aquí el enlace de su podcast de YouTube
+                    cuando lo hayan subido.
+                -->
+
+                <a
+                    href="https://www.youtube.com/"
+                    target="_blank"
+                    class="btn btn-primary">
+
+                    ▶ Escuchar podcast
+
+                </a>
+
+            </div>
+
+
+            <div class="glass-card">
+
+                <div class="audio-visual">
+
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+
+                </div>
+
+                <p style="text-align:center; color:#7f8b9d;">
+                    IRTRA SafeZone — Audio informativo
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EQUIPO
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                07 / Equipo
+            </div>
+
+            <h2 class="section-title">
+                Nuestro equipo de consultoría.
+            </h2>
+
+            <p class="section-description">
+                Proyecto desarrollado como parte del curso
+                de Tecnología Aplicada.
+            </p>
+
+        </div>
+
+
+        <div class="team">
+
+            <!-- CAMBIAR NOMBRE -->
+
+            <div class="member">
+
+                <div class="avatar">
+                    A
+                </div>
+
+                <div>
+                    <h3>
+                        Nombre del Integrante 1
+                    </h3>
+
+                    <span>
+                        Ingeniería y Automatización
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- CAMBIAR NOMBRE -->
+
+            <div class="member">
+
+                <div class="avatar">
+                    B
+                </div>
+
+                <div>
+                    <h3>
+                        Nombre del Integrante 2
+                    </h3>
+
+                    <span>
+                        Ingeniería y Automatización
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="final">
+
+    <div class="container">
+
+        <div class="section-label">
+            IRTRA PETAPA × TECNOLOGÍA
+        </div>
+
+        <h2>
+            Detectar. Alertar. Proteger.
+        </h2>
+
+        <p>
+            IRTRA SafeZone demuestra cómo la automatización
+            puede transformar una problemática de seguridad
+            en una solución tecnológica.
+        </p>
+
+        <!--
+            CAMBIAR ESTE ENLACE POR SU GITHUB
+
+            Ejemplo:
+
+            https://github.com/usuario/repositorio
+        -->
+
+        <a
+            href="https://github.com/"
+            target="_blank"
+            class="btn btn-primary">
+
+            Ver proyecto en GitHub
+
+        </a>
+
+    </div>
+
+</section>
 
 </main>
 
-<footer>
-    <span>2026 © MARIORABBID</span>
 
-    <img src="https://www.capouilliez.edu.gt/assets/img/logo.png"
-         alt="Logo">
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <span>
+            © 2026 IRTRA SafeZone
+        </span>
+
+        <span>
+            Tecnología Aplicada · Undécimo
+        </span>
+
+    </div>
+
 </footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    // Cambia el estilo de la barra de navegación
+    // cuando el usuario hace scroll.
+
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 50) {
+
+            nav.style.background =
+                "rgba(5, 8, 14, 0.94)";
+
+        } else {
+
+            nav.style.background =
+                "rgba(7, 11, 18, 0.75)";
+
+        }
+
+    });
+
+
+    // Animación sencilla de aparición de elementos
+
+    const observer = new IntersectionObserver(
+
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.style.opacity = "1";
+                    entry.target.style.transform = "translateY(0)";
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.1
+        }
+
+    );
+
+
+    document
+        .querySelectorAll(".glass-card, .level, .flow-card, .component, .ods-card, .member")
+        .forEach(element => {
+
+            element.style.opacity = "0";
+            element.style.transform = "translateY(20px)";
+            element.style.transition = "opacity .7s ease, transform .7s ease";
+
+            observer.observe(element);
+
+        });
+
+</script>
 
 </body>
 </html>
