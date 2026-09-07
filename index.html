@@ -183,12 +183,19 @@
             font-size: clamp(3rem, 8vw, 6.5rem);
             line-height: .95;
             letter-spacing: -4px;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
         }
 
         .hero h1 span {
             color: #00e5a0;
             text-shadow: 0 0 30px rgba(0,229,160,.25);
+        }
+
+        .hero-tagline {
+            font-size: 1.3rem;
+            color: #00e5a0;
+            font-style: italic;
+            margin-bottom: 20px;
         }
 
         .hero-description {
@@ -499,29 +506,27 @@
         ===================================================== */
 
         .circuit-box {
-            min-height: 350px;
+            padding: 25px;
             border: 1px dashed rgba(0,229,160,.3);
             border-radius: 20px;
-            display: grid;
-            place-items: center;
-            background:
-                radial-gradient(circle, rgba(0,229,160,.06), transparent 60%);
+            background: radial-gradient(circle, rgba(0,229,160,.06), transparent 60%);
             text-align: center;
-            padding: 30px;
         }
 
-        .circuit-box .placeholder {
-            max-width: 600px;
+        .circuit-img-container {
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,.1);
+            background: #000;
         }
 
-        .circuit-box h3 {
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-        }
-
-        .circuit-box p {
-            color: #8e9aaa;
-            margin-bottom: 20px;
+        .circuit-img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* =====================================================
@@ -742,6 +747,7 @@
             <li><a href="#problema">Problema</a></li>
             <li><a href="#funcionamiento">Funcionamiento</a></li>
             <li><a href="#circuito">Circuito</a></li>
+            <li><a href="#equipo">Equipo</a></li>
             <li><a href="#ods">ODS</a></li>
             <li><a href="#podcast">Podcast</a></li>
         </ul>
@@ -764,13 +770,17 @@
 
             <div class="badge">
                 <span class="pulse"></span>
-                SISTEMA DE SEGURIDAD AUTOMATIZADO
+                SISTEMA AUTÓNOMO DE MONITOREO Y ALERTA
             </div>
 
             <h1>
                 IRTRA<br>
                 <span>SafeZone</span>
             </h1>
+
+            <p class="hero-tagline">
+                "Una solución inteligente para detectar, alertar y proteger."
+            </p>
 
             <p class="hero-description">
                 Sistema autónomo de detección de proximidad y alerta
@@ -793,18 +803,18 @@
             <div class="stats">
 
                 <div class="stat">
-                    <strong>100 cm</strong>
-                    <span>Inicio de zona de advertencia</span>
+                    <strong>HC-SR04 / PIR</strong>
+                    <span>Detección de proximidad y movimiento</span>
                 </div>
 
                 <div class="stat">
-                    <strong>50 cm</strong>
-                    <span>Inicio de zona de peligro</span>
+                    <strong>Visual y Sonora</strong>
+                    <span>Respuesta mediante LEDs y Buzzer</span>
                 </div>
 
                 <div class="stat">
-                    <strong>Arduino</strong>
-                    <span>Control principal del sistema</span>
+                    <strong>Arduino Uno</strong>
+                    <span>Control y procesamiento autónomo</span>
                 </div>
 
             </div>
@@ -835,9 +845,7 @@
             </h2>
 
             <p class="section-description">
-                En un parque de atracciones existen áreas técnicas,
-                de mantenimiento y otros espacios que deben permanecer
-                restringidos para los visitantes.
+                La gran cantidad de visitantes y trabajadores que circulan dentro de un parque recreativo hace necesario contar con herramientas que apoyen la vigilancia de determinadas áreas.
             </p>
 
         </div>
@@ -850,19 +858,13 @@
                 <h3>El reto</h3>
 
                 <p>
-                    Una persona que se aproxima demasiado a una zona
-                    restringida puede representar un riesgo para su
-                    propia seguridad o para el funcionamiento de las
-                    instalaciones.
+                    La ausencia de un sistema autónomo de alerta inmediata en determinadas zonas restringidas puede dificultar la detección oportuna de personas que ingresen a áreas técnicas o de riesgo.
                 </p>
 
                 <br>
 
                 <p>
-                    IRTRA SafeZone propone un sistema capaz de detectar
-                    la distancia de una persona respecto al área
-                    restringida y emitir una alerta proporcional
-                    al nivel de riesgo.
+                    <strong>Nuestra Solución:</strong> Implementar un sistema automatizado que detecte movimiento y genere inmediatamente señales visuales y sonoras para alertar al personal y prevenir accidentes.
                 </p>
 
             </div>
@@ -875,7 +877,7 @@
                     <div>
                         <strong>Acceso no autorizado</strong>
                         <br>
-                        <small>Una persona se aproxima a una zona restringida.</small>
+                        <small>Una persona se aproxima o ingresa a una zona restringida.</small>
                     </div>
                 </div>
 
@@ -884,7 +886,7 @@
                     <div>
                         <strong>Detección automática</strong>
                         <br>
-                        <small>El sensor mide constantemente la distancia.</small>
+                        <small>Sensores miden distancia y detectan presencia constante.</small>
                     </div>
                 </div>
 
@@ -893,7 +895,7 @@
                     <div>
                         <strong>Alerta inmediata</strong>
                         <br>
-                        <small>LEDs y buzzer comunican el nivel de riesgo.</small>
+                        <small>LEDs y buzzer comunican el peligro en tiempo real.</small>
                     </div>
                 </div>
 
@@ -921,12 +923,11 @@
             </div>
 
             <h2 class="section-title">
-                De la distancia a una alerta.
+                De la detección a la respuesta.
             </h2>
 
             <p class="section-description">
-                El sistema transforma la información obtenida por
-                el sensor ultrasónico en una respuesta visual y sonora.
+                El sensor detecta movimiento o proximidad → Arduino procesa la señal → Se activan las alertas.
             </p>
 
         </div>
@@ -938,8 +939,7 @@
                 <div class="flow-number">01</div>
                 <h3>Detección</h3>
                 <p>
-                    El sensor ultrasónico HC-SR04 mide la distancia
-                    de la persona.
+                    El sensor (HC-SR04 / PIR) identifica la presencia o distancia de una persona en la zona.
                 </p>
             </div>
 
@@ -947,8 +947,7 @@
                 <div class="flow-number">02</div>
                 <h3>Procesamiento</h3>
                 <p>
-                    Arduino recibe la información y determina
-                    el nivel de seguridad.
+                    La placa Arduino Uno R3 procesa la señal enviada por el sensor en tiempo real.
                 </p>
             </div>
 
@@ -956,8 +955,7 @@
                 <div class="flow-number">03</div>
                 <h3>Señal visual</h3>
                 <p>
-                    Uno de los tres LEDs indica si el estado es
-                    seguro, preventivo o peligroso.
+                    Se activan los LEDs configurados para indicar visualmente el estado del área.
                 </p>
             </div>
 
@@ -965,8 +963,7 @@
                 <div class="flow-number">04</div>
                 <h3>Alerta sonora</h3>
                 <p>
-                    El buzzer cambia su comportamiento según
-                    la proximidad detectada.
+                    El buzzer emite un tono de advertencia audible para alertar al entorno.
                 </p>
             </div>
 
@@ -978,7 +975,7 @@
 
 
 <!-- =====================================================
-     NIVELES
+     NIVELES DE SEGURIDAD
 ===================================================== -->
 
 <section>
@@ -1071,7 +1068,7 @@
         <div class="section-header">
 
             <div class="section-label">
-                04 / Tecnología
+                04 / Tecnología y Materiales
             </div>
 
             <h2 class="section-title">
@@ -1090,8 +1087,7 @@
                 <h3>Arduino Uno R3</h3>
 
                 <p>
-                    Procesa la información y controla
-                    las respuestas del sistema.
+                    Microcontrolador principal que procesa las señales y gestiona las salidas.
                 </p>
 
             </div>
@@ -1101,11 +1097,10 @@
 
                 <div class="component-icon">📡</div>
 
-                <h3>HC-SR04</h3>
+                <h3>Sensores</h3>
 
                 <p>
-                    Sensor ultrasónico encargado
-                    de medir la distancia.
+                    HC-SR04 (Ultrasónico) y Sensor PIR para medir distancia y movimiento.
                 </p>
 
             </div>
@@ -1115,11 +1110,10 @@
 
                 <div class="component-icon">💡</div>
 
-                <h3>LEDs</h3>
+                <h3>LEDs y Resistencias</h3>
 
                 <p>
-                    Representan visualmente los
-                    diferentes niveles de seguridad.
+                    Indicadores luminosos complementados con resistencias de protección.
                 </p>
 
             </div>
@@ -1129,11 +1123,10 @@
 
                 <div class="component-icon">🔊</div>
 
-                <h3>Buzzer</h3>
+                <h3>Buzzer y Conexiones</h3>
 
                 <p>
-                    Produce la alerta sonora
-                    cuando aumenta el riesgo.
+                    Zumbador acústico, Protoboard y Cables Jumper para la interconexión del circuito.
                 </p>
 
             </div>
@@ -1160,13 +1153,11 @@
             </div>
 
             <h2 class="section-title">
-                Del concepto al circuito.
+                Esquema del circuito en Tinkercad.
             </h2>
 
             <p class="section-description">
-                El prototipo fue diseñado y probado mediante
-                Tinkercad Circuits utilizando Arduino Uno R3
-                y programación en C++.
+                Diseño del prototipo desarrollado y simulado en Tinkercad Circuits con Arduino Uno R3.
             </p>
 
         </div>
@@ -1174,39 +1165,63 @@
 
         <div class="circuit-box">
 
-            <div class="placeholder">
+            <div class="circuit-img-container">
+                <!-- Imagen del circuito integrada desde la infografía -->
+                <img src="https://i.ibb.co/L82vJ21/circuito-safezone.png" alt="Circuito Tinkercad IRTRA SafeZone">
+            </div>
 
-                <div style="font-size: 3rem; margin-bottom: 15px;">
-                    ⚡
+            <p style="color: #8e9aaa; margin-bottom: 20px;">
+                Visualización de las conexiones del sensor ultrasónico HC-SR04, LEDs de alerta, buzzer y resistencias conectados al Arduino Uno R3.
+            </p>
+
+            <a href="#podcast" class="btn btn-primary">
+                Ver documentación
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EQUIPO
+===================================================== -->
+
+<section id="equipo">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <div class="section-label">
+                06 / Integrantes
+            </div>
+
+            <h2 class="section-title">
+                Equipo de desarrollo.
+            </h2>
+
+        </div>
+
+
+        <div class="team">
+
+            <div class="member">
+                <div class="avatar">AL</div>
+                <div>
+                    <h3>Allison López</h3>
+                    <span>Desarrolladora del proyecto</span>
                 </div>
+            </div>
 
-                <h3>
-                    Circuito IRTRA SafeZone
-                </h3>
-
-                <p>
-                    Aquí pueden colocar una captura legible
-                    del circuito realizado en Tinkercad.
-                </p>
-
-                <!--
-                    PARA AGREGAR LA IMAGEN:
-
-                    1. Suban la captura al repositorio.
-                    2. Por ejemplo:
-                       circuito.png
-
-                    3. Reemplacen este bloque por:
-
-                    <img src="circuito.png"
-                         alt="Circuito IRTRA SafeZone"
-                         style="max-width:100%; border-radius:12px;">
-                -->
-
-                <a href="#podcast" class="btn btn-primary">
-                    Ver documentación
-                </a>
-
+            <div class="member">
+                <div class="avatar">EG</div>
+                <div>
+                    <h3>Emilio Gomez</h3>
+                    <span>Desarrollador del proyecto</span>
+                </div>
             </div>
 
         </div>
@@ -1227,7 +1242,7 @@
         <div class="section-header">
 
             <div class="section-label">
-                06 / Impacto
+                07 / Impacto
             </div>
 
             <h2 class="section-title">
@@ -1235,8 +1250,7 @@
             </h2>
 
             <p class="section-description">
-                El proyecto relaciona la automatización y la innovación
-                tecnológica con los Objetivos de Desarrollo Sostenible.
+                El proyecto relaciona la automatización y la innovación tecnológica con los Objetivos de Desarrollo Sostenible.
             </p>
 
         </div>
@@ -1251,13 +1265,11 @@
                 </div>
 
                 <h3>
-                    Industria, innovación e infraestructura
+                    Industria, Innovación e Infraestructura
                 </h3>
 
                 <p>
-                    El proyecto utiliza automatización, electrónica
-                    y programación para desarrollar una solución
-                    tecnológica frente a una problemática de seguridad.
+                    El proyecto promueve el uso de tecnología y automatización para desarrollar soluciones que mejoren el funcionamiento y la seguridad de determinados espacios.
                 </p>
 
             </div>
@@ -1270,12 +1282,11 @@
                 </div>
 
                 <h3>
-                    Ciudades y comunidades sostenibles
+                    Ciudades y Comunidades Sostenibles
                 </h3>
 
                 <p>
-                    La propuesta busca contribuir a una mejor gestión
-                    y seguridad de espacios utilizados por las personas.
+                    La propuesta busca contribuir a una mejor gestión y seguridad de espacios públicos y recreativos utilizados por las personas.
                 </p>
 
             </div>
@@ -1312,48 +1323,24 @@
                 </h2>
 
                 <p>
-                    Conoce la problemática, el funcionamiento del
-                    circuito, sus componentes, los niveles de alerta
-                    y el impacto del proyecto.
+                    Conoce la problemática, el funcionamiento del circuito, sus componentes, los niveles de alerta y el impacto del proyecto explicados por el equipo.
                 </p>
 
-                <!--
-                    CAMBIAR ESTE ENLACE
-
-                    Coloca aquí el enlace de su podcast de YouTube
-                    cuando lo hayan subido.
-                -->
-
-                <a
-                    href="https://www.youtube.com/"
-                    target="_blank"
-                    class="btn btn-primary">
-
-                    ▶ Escuchar podcast
-
-                </a>
+                <audio controls style="width: 100%; margin-top: 10px; filter: invert(0.9) hue-rotate(120deg);">
+                    <source src="podcast.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio>
 
             </div>
 
-
-            <div class="glass-card">
-
-                <div class="audio-visual">
-
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-
-                </div>
-
-                <p style="text-align:center; color:#7f8b9d;">
-                    IRTRA SafeZone — Audio informativo
-                </p>
-
+            <div class="audio-visual">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
             </div>
 
         </div>
@@ -1364,119 +1351,20 @@
 
 
 <!-- =====================================================
-     EQUIPO
-===================================================== -->
-
-<section>
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <div class="section-label">
-                07 / Equipo
-            </div>
-
-            <h2 class="section-title">
-                Nuestro equipo de consultoría.
-            </h2>
-
-            <p class="section-description">
-                Proyecto desarrollado como parte del curso
-                de Tecnología Aplicada.
-            </p>
-
-        </div>
-
-
-        <div class="team">
-
-            <!-- CAMBIAR NOMBRE -->
-
-            <div class="member">
-
-                <div class="avatar">
-                    A
-                </div>
-
-                <div>
-                    <h3>
-                        Nombre del Integrante 1
-                    </h3>
-
-                    <span>
-                        Ingeniería y Automatización
-                    </span>
-                </div>
-
-            </div>
-
-
-            <!-- CAMBIAR NOMBRE -->
-
-            <div class="member">
-
-                <div class="avatar">
-                    B
-                </div>
-
-                <div>
-                    <h3>
-                        Nombre del Integrante 2
-                    </h3>
-
-                    <span>
-                        Ingeniería y Automatización
-                    </span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     CTA
+     CTA FINAL
 ===================================================== -->
 
 <section class="final">
 
     <div class="container">
 
-        <div class="section-label">
-            IRTRA PETAPA × TECNOLOGÍA
-        </div>
-
-        <h2>
-            Detectar. Alertar. Proteger.
-        </h2>
+        <h2>IRTRA SafeZone</h2>
 
         <p>
-            IRTRA SafeZone demuestra cómo la automatización
-            puede transformar una problemática de seguridad
-            en una solución tecnológica.
+            Innovación y automatización al servicio de la seguridad de los visitantes y colaboradores.
         </p>
 
-        <!--
-            CAMBIAR ESTE ENLACE POR SU GITHUB
-
-            Ejemplo:
-
-            https://github.com/usuario/repositorio
-        -->
-
-        <a
-            href="https://github.com/"
-            target="_blank"
-            class="btn btn-primary">
-
-            Ver proyecto en GitHub
-
-        </a>
+        <a href="#inicio" class="btn btn-primary">Volver al inicio</a>
 
     </div>
 
@@ -1493,86 +1381,17 @@
 
     <div class="container footer-content">
 
-        <span>
-            © 2026 IRTRA SafeZone
-        </span>
+        <div>
+            © 2026 IRTRA SafeZone - Allison López & Emilio Gomez
+        </div>
 
-        <span>
-            Tecnología Aplicada · Undécimo
-        </span>
+        <div>
+            Sistema Autónomo de Monitoreo y Alerta
+        </div>
 
     </div>
 
 </footer>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-    // Cambia el estilo de la barra de navegación
-    // cuando el usuario hace scroll.
-
-    const nav = document.querySelector("nav");
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 50) {
-
-            nav.style.background =
-                "rgba(5, 8, 14, 0.94)";
-
-        } else {
-
-            nav.style.background =
-                "rgba(7, 11, 18, 0.75)";
-
-        }
-
-    });
-
-
-    // Animación sencilla de aparición de elementos
-
-    const observer = new IntersectionObserver(
-
-        entries => {
-
-            entries.forEach(entry => {
-
-                if (entry.isIntersecting) {
-
-                    entry.target.style.opacity = "1";
-                    entry.target.style.transform = "translateY(0)";
-
-                }
-
-            });
-
-        },
-
-        {
-            threshold: 0.1
-        }
-
-    );
-
-
-    document
-        .querySelectorAll(".glass-card, .level, .flow-card, .component, .ods-card, .member")
-        .forEach(element => {
-
-            element.style.opacity = "0";
-            element.style.transform = "translateY(20px)";
-            element.style.transition = "opacity .7s ease, transform .7s ease";
-
-            observer.observe(element);
-
-        });
-
-</script>
 
 </body>
 </html>
