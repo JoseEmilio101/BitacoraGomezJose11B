@@ -45,7 +45,7 @@
 
 
         /* =====================================================
-           FONDO ANIMADO
+           FONDO
         ===================================================== */
 
         body::before {
@@ -261,6 +261,10 @@
             transition: .3s;
 
             display: inline-block;
+
+            cursor: pointer;
+
+            border: none;
         }
 
         .btn-primary {
@@ -607,11 +611,11 @@
 
 
         /* =====================================================
-           CIRCUITO / PROTOTIPO
+           PROTOTIPO
         ===================================================== */
 
         .circuit-box {
-            padding: 25px;
+            padding: 40px;
 
             border:
                 1px dashed rgba(0,229,160,.3);
@@ -628,39 +632,126 @@
             text-align: center;
         }
 
-        .circuit-img-container {
+        .circuit-box p {
+            color: #8e9aaa;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =====================================================
+           MODAL DE DOCUMENTACIÓN
+        ===================================================== */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            z-index: 2000;
+
+            left: 0;
+            top: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+                rgba(0, 0, 0, 0.90);
+
+            backdrop-filter: blur(8px);
+
+            padding: 40px;
+
+            overflow: auto;
+        }
+
+        .modal.active {
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+
             width: 100%;
 
             max-width: 1100px;
 
-            margin: 0 auto 25px;
+            max-height: 90vh;
 
-            overflow: hidden;
+            text-align: center;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+
+            max-height: 82vh;
+
+            width: auto;
+
+            height: auto;
+
+            object-fit: contain;
 
             border-radius: 12px;
 
             border:
-                1px solid rgba(255,255,255,.1);
+                1px solid rgba(255,255,255,.15);
 
-            background: #000;
+            box-shadow:
+                0 20px 80px rgba(0,0,0,.6);
         }
 
-        .circuit-img-container img {
-            width: 100%;
+        .close-modal {
+            position: absolute;
 
-            height: auto;
+            top: -45px;
+            right: 0;
 
-            display: block;
+            width: 40px;
+            height: 40px;
 
-            object-fit: contain;
+            border-radius: 50%;
+
+            border: 1px solid
+                rgba(255,255,255,.2);
+
+            background:
+                rgba(255,255,255,.08);
+
+            color: white;
+
+            font-size: 1.5rem;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: .3s;
         }
 
-        .circuit-description {
-            color: #8e9aaa;
+        .close-modal:hover {
+            background: #ff4055;
 
-            margin-bottom: 20px;
+            border-color: #ff4055;
 
-            font-size: .98rem;
+            transform: rotate(90deg);
+        }
+
+        .modal-title {
+            color: #00e5a0;
+
+            margin-bottom: 15px;
+
+            font-size: 1.3rem;
         }
 
 
@@ -965,6 +1056,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .circuit-box {
+                padding: 25px;
+            }
+
         }
 
 
@@ -986,13 +1081,19 @@
                 flex-direction: column;
             }
 
-            .circuit-box {
-                padding: 15px;
+            .modal {
+                padding: 20px;
+            }
+
+            .close-modal {
+                top: -50px;
+                right: 0;
             }
 
         }
 
     </style>
+
 </head>
 
 
@@ -1057,15 +1158,10 @@
 
 
 <!-- =====================================================
-     CONTENIDO PRINCIPAL
+     HERO
 ===================================================== -->
 
 <main>
-
-
-<!-- =====================================================
-     HERO
-===================================================== -->
 
 <section class="hero" id="inicio">
 
@@ -1083,11 +1179,8 @@
 
 
             <h1>
-
                 IRTRA<br>
-
                 <span>SafeZone</span>
-
             </h1>
 
 
@@ -1187,25 +1280,22 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <div class="section-label">
                 01 / Problemática
             </div>
 
-
             <h2 class="section-title">
                 Seguridad antes de que ocurra el problema.
             </h2>
 
-
             <p class="section-description">
 
                 La gran cantidad de visitantes y trabajadores
-                que circulan dentro de un parque recreativo
-                hace necesario contar con herramientas que
-                apoyen la vigilancia de determinadas áreas.
+                que circulan dentro de un parque recreativo hace
+                necesario contar con herramientas que apoyen la
+                vigilancia de determinadas áreas.
 
             </p>
 
@@ -1221,7 +1311,6 @@
                     El reto
                 </h3>
 
-
                 <p>
 
                     La ausencia de un sistema autónomo de alerta
@@ -1231,9 +1320,7 @@
 
                 </p>
 
-
                 <br>
-
 
                 <p>
 
@@ -1343,18 +1430,15 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <div class="section-label">
                 02 / Funcionamiento
             </div>
 
-
             <h2 class="section-title">
                 De la detección a la respuesta.
             </h2>
-
 
             <p class="section-description">
 
@@ -1468,13 +1552,11 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <div class="section-label">
                 03 / Niveles de seguridad
             </div>
-
 
             <h2 class="section-title">
                 Tres distancias. Tres respuestas.
@@ -1490,16 +1572,13 @@
 
                 <div class="level-light green"></div>
 
-
                 <div class="distance">
                     &gt; 100 cm
                 </div>
 
-
                 <h3>
                     Zona segura
                 </h3>
-
 
                 <p>
 
@@ -1515,16 +1594,13 @@
 
                 <div class="level-light yellow"></div>
 
-
                 <div class="distance">
                     50 – 100 cm
                 </div>
 
-
                 <h3>
                     Zona de advertencia
                 </h3>
-
 
                 <p>
 
@@ -1540,16 +1616,13 @@
 
                 <div class="level-light red"></div>
 
-
                 <div class="distance">
                     &lt; 50 cm
                 </div>
 
-
                 <h3>
                     Zona de peligro
                 </h3>
-
 
                 <p>
 
@@ -1576,13 +1649,11 @@
 
     <div class="container">
 
-
         <div class="section-header">
 
             <div class="section-label">
                 04 / Tecnología y Materiales
             </div>
-
 
             <h2 class="section-title">
                 Los componentes detrás del sistema.
@@ -1683,7 +1754,7 @@
 
 
 <!-- =====================================================
-     PROTOTIPO / CIRCUITO
+     PROTOTIPO
 ===================================================== -->
 
 <section id="circuito">
@@ -1716,45 +1787,23 @@
         <div class="circuit-box">
 
 
-            <!-- =================================================
-                 IMAGEN DEL CIRCUITO
-                 
-                 IMPORTANTE:
-                 La imagen está dentro de:
+            <p>
 
-                 recursos/
-                    img/
-                       imagen.png
-
-                 Por eso la ruta correcta es:
-                 recursos/img/imagen.png
-            ================================================== -->
-
-            <div class="circuit-img-container">
-
-                <img
-                    src="recursos/img/imagen.png"
-                    alt="Esquema del circuito Tinkercad de IRTRA SafeZone"
-                >
-
-            </div>
-
-
-            <p class="circuit-description">
-
-                Visualización de las conexiones del sensor
-                ultrasónico HC-SR04, LEDs de alerta, buzzer,
-                resistencias, protoboard y Arduino Uno R3.
+                Haz clic en el botón para visualizar
+                la documentación gráfica del circuito
+                de IRTRA SafeZone.
 
             </p>
 
 
-            <a
-                href="#podcast"
+            <!-- BOTÓN QUE ABRE LA IMAGEN -->
+
+            <button
                 class="btn btn-primary"
+                onclick="abrirModal()"
             >
-                Ver documentación
-            </a>
+                📄 Ver documentación
+            </button>
 
 
         </div>
@@ -1762,6 +1811,45 @@
     </div>
 
 </section>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    id="documentacionModal"
+    class="modal"
+    onclick="cerrarModal(event)"
+>
+
+
+    <div class="modal-content">
+
+
+        <button
+            class="close-modal"
+            onclick="cerrarModal()"
+            aria-label="Cerrar"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-title">
+            IRTRA SafeZone — Esquema del circuito
+        </div>
+
+
+        <img
+            src="recursos/img/imagen.png"
+            alt="Esquema del circuito IRTRA SafeZone"
+        >
+
+
+    </div>
+
+</div>
 
 
 <!-- =====================================================
@@ -2078,6 +2166,79 @@
     </div>
 
 </footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT DEL MODAL
+===================================================== -->
+
+<script>
+
+    function abrirModal() {
+
+        const modal =
+            document.getElementById(
+                "documentacionModal"
+            );
+
+        modal.classList.add("active");
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    function cerrarModal(event) {
+
+        const modal =
+            document.getElementById(
+                "documentacionModal"
+            );
+
+
+        /*
+         * Si se hizo clic directamente
+         * en el fondo oscuro, se cierra.
+         */
+
+        if (
+            !event ||
+            event.target === modal ||
+            event.target.classList.contains("close-modal")
+        ) {
+
+            modal.classList.remove("active");
+
+            document.body.style.overflow = "auto";
+        }
+
+    }
+
+
+    /*
+     * También permite cerrar el modal
+     * presionando la tecla ESC.
+     */
+
+    document.addEventListener(
+        "keydown",
+        function(event) {
+
+            if (event.key === "Escape") {
+
+                const modal =
+                    document.getElementById(
+                        "documentacionModal"
+                    );
+
+                modal.classList.remove("active");
+
+                document.body.style.overflow = "auto";
+            }
+
+        }
+    );
+
+</script>
 
 
 </body>
