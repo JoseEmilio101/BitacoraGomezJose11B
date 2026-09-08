@@ -45,7 +45,7 @@
 
 
         /* =====================================================
-           FONDO ANIMADO
+           FONDO
         ===================================================== */
 
         body::before {
@@ -114,6 +114,7 @@
 
         .nav-content {
             height: 72px;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -152,9 +153,12 @@
 
         .hero {
             min-height: 100vh;
+
             display: flex;
             align-items: center;
+
             padding-top: 100px;
+
             position: relative;
         }
 
@@ -184,15 +188,19 @@
         .pulse {
             width: 8px;
             height: 8px;
+
             background: #00e5a0;
+
             border-radius: 50%;
+
             box-shadow: 0 0 15px #00e5a0;
+
             animation: pulse 1.7s infinite;
         }
 
         @keyframes pulse {
 
-            0%, 100% {
+            0%,100% {
                 transform: scale(1);
                 opacity: 1;
             }
@@ -213,7 +221,9 @@
 
         .hero h1 span {
             color: #00e5a0;
-            text-shadow: 0 0 30px rgba(0,229,160,.25);
+
+            text-shadow:
+                0 0 30px rgba(0,229,160,.25);
         }
 
         .hero-tagline {
@@ -225,8 +235,11 @@
 
         .hero-description {
             max-width: 680px;
+
             color: #aab5c5;
+
             font-size: 1.15rem;
+
             margin-bottom: 35px;
         }
 
@@ -238,9 +251,13 @@
 
         .btn {
             padding: 13px 23px;
+
             border-radius: 8px;
+
             font-weight: 700;
+
             transition: .3s;
+
             display: inline-block;
         }
 
@@ -251,12 +268,16 @@
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 35px rgba(0,229,160,.25);
+
+            box-shadow:
+                0 10px 35px rgba(0,229,160,.25);
         }
 
         .btn-secondary {
             border: 1px solid rgba(255,255,255,.15);
+
             color: #dce4ef;
+
             background: rgba(255,255,255,.03);
         }
 
@@ -272,26 +293,37 @@
 
         .stats {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+
+            grid-template-columns:
+                repeat(3,1fr);
+
             gap: 15px;
+
             margin-top: 65px;
         }
 
         .stat {
             padding: 20px;
+
             border: 1px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.025);
+
+            background:
+                rgba(255,255,255,.025);
+
             border-radius: 12px;
         }
 
         .stat strong {
             display: block;
+
             font-size: 1.7rem;
+
             color: #fff;
         }
 
         .stat span {
             color: #8490a2;
+
             font-size: .85rem;
         }
 
@@ -306,21 +338,30 @@
 
         .section-header {
             max-width: 700px;
+
             margin-bottom: 45px;
         }
 
         .section-label {
             color: #00e5a0;
+
             font-size: .75rem;
+
             font-weight: 800;
+
             text-transform: uppercase;
+
             letter-spacing: 2px;
+
             margin-bottom: 10px;
         }
 
         .section-title {
-            font-size: clamp(2rem, 5vw, 3.3rem);
+            font-size:
+                clamp(2rem, 5vw, 3.3rem);
+
             line-height: 1.05;
+
             margin-bottom: 15px;
         }
 
@@ -335,14 +376,22 @@
 
         .problem-grid {
             display: grid;
-            grid-template-columns: 1.2fr .8fr;
+
+            grid-template-columns:
+                1.2fr .8fr;
+
             gap: 25px;
         }
 
         .glass-card {
-            border: 1px solid rgba(255,255,255,.09);
-            background: rgba(255,255,255,.035);
+            border:
+                1px solid rgba(255,255,255,.09);
+
+            background:
+                rgba(255,255,255,.035);
+
             border-radius: 18px;
+
             padding: 30px;
         }
 
@@ -356,10 +405,15 @@
 
         .risk {
             display: flex;
+
             align-items: center;
+
             gap: 15px;
+
             padding: 16px 0;
-            border-bottom: 1px solid rgba(255,255,255,.07);
+
+            border-bottom:
+                1px solid rgba(255,255,255,.07);
         }
 
         .risk:last-child {
@@ -369,11 +423,17 @@
         .risk-icon {
             width: 42px;
             height: 42px;
+
             border-radius: 10px;
+
             display: grid;
             place-items: center;
-            background: rgba(255,255,255,.05);
+
+            background:
+                rgba(255,255,255,.05);
+
             font-size: 1.2rem;
+
             flex-shrink: 0;
         }
 
@@ -384,22 +444,32 @@
 
         .flow {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+
+            grid-template-columns:
+                repeat(4,1fr);
+
             gap: 15px;
         }
 
         .flow-card {
             padding: 25px;
-            border: 1px solid rgba(255,255,255,.08);
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
             border-radius: 15px;
-            background: rgba(255,255,255,.025);
-            position: relative;
+
+            background:
+                rgba(255,255,255,.025);
         }
 
         .flow-number {
             color: #00e5a0;
+
             font-weight: 900;
+
             font-size: .8rem;
+
             margin-bottom: 18px;
         }
 
@@ -409,6 +479,7 @@
 
         .flow-card p {
             color: #8995a7;
+
             font-size: .9rem;
         }
 
@@ -419,15 +490,24 @@
 
         .levels {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+
+            grid-template-columns:
+                repeat(3,1fr);
+
             gap: 20px;
         }
 
         .level {
             padding: 30px;
+
             border-radius: 18px;
-            border: 1px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.025);
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            background:
+                rgba(255,255,255,.025);
+
             transition: .3s;
         }
 
@@ -438,23 +518,31 @@
         .level-light {
             width: 20px;
             height: 20px;
+
             border-radius: 50%;
+
             margin-bottom: 20px;
         }
 
         .green {
             background: #00e58a;
-            box-shadow: 0 0 25px rgba(0,229,138,.5);
+
+            box-shadow:
+                0 0 25px rgba(0,229,138,.5);
         }
 
         .yellow {
             background: #ffd21f;
-            box-shadow: 0 0 25px rgba(255,210,31,.45);
+
+            box-shadow:
+                0 0 25px rgba(255,210,31,.45);
         }
 
         .red {
             background: #ff4055;
-            box-shadow: 0 0 25px rgba(255,64,85,.5);
+
+            box-shadow:
+                0 0 25px rgba(255,64,85,.5);
         }
 
         .level h3 {
@@ -463,12 +551,15 @@
 
         .distance {
             font-size: 1.8rem;
+
             font-weight: 800;
+
             margin-bottom: 10px;
         }
 
         .level p {
             color: #8d99aa;
+
             font-size: .9rem;
         }
 
@@ -479,31 +570,45 @@
 
         .components {
             display: grid;
-            grid-template-columns: repeat(4,1fr);
+
+            grid-template-columns:
+                repeat(4,1fr);
+
             gap: 15px;
         }
 
         .component {
             text-align: center;
+
             padding: 25px 15px;
-            border: 1px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.025);
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            background:
+                rgba(255,255,255,.025);
+
             border-radius: 15px;
+
             transition: .3s;
         }
 
         .component:hover {
             transform: translateY(-5px);
-            border-color: rgba(0,229,160,.3);
+
+            border-color:
+                rgba(0,229,160,.3);
         }
 
         .component-icon {
             font-size: 2.2rem;
+
             margin-bottom: 12px;
         }
 
         .component p {
             color: #8793a5;
+
             font-size: .85rem;
         }
 
@@ -514,14 +619,20 @@
 
         .ods {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+
+            grid-template-columns:
+                1fr 1fr;
+
             gap: 20px;
         }
 
         .ods-card {
             padding: 35px;
+
             border-radius: 18px;
-            border: 1px solid rgba(255,255,255,.09);
+
+            border:
+                1px solid rgba(255,255,255,.09);
 
             background:
                 linear-gradient(
@@ -539,24 +650,29 @@
 
         .ods-number {
             font-size: 3rem;
+
             font-weight: 900;
+
             color: #00e5a0;
         }
 
         .ods-card p {
             color: #99a5b6;
+
             margin-top: 10px;
         }
 
 
         /* =====================================================
-           CIRCUITO / PROTOTIPO
+           PROTOTIPO / CIRCUITO
         ===================================================== */
 
         .circuit-box {
             padding: 25px;
 
-            border: 1px dashed rgba(0,229,160,.3);
+            border:
+                1px dashed rgba(0,229,160,.3);
+
             border-radius: 20px;
 
             background:
@@ -571,13 +687,18 @@
 
         .circuit-img-container {
             width: 100%;
-            max-width: 1000px;
-            margin: 0 auto 25px;
+
+            max-width: 1100px;
+
+            margin:
+                0 auto 25px;
 
             overflow: hidden;
 
             border-radius: 14px;
-            border: 1px solid rgba(255,255,255,.1);
+
+            border:
+                1px solid rgba(255,255,255,.1);
 
             background: #000;
 
@@ -587,14 +708,21 @@
 
         .circuit-img-container img {
             width: 100%;
+
             height: auto;
+
             display: block;
         }
 
         .circuit-description {
             max-width: 850px;
-            margin: 0 auto 25px;
+
+            margin:
+                0 auto 25px;
+
             color: #8e9aaa;
+
+            font-size: .95rem;
         }
 
 
@@ -604,13 +732,18 @@
 
         .podcast {
             display: grid;
-            grid-template-columns: 1fr .8fr;
+
+            grid-template-columns:
+                1fr .8fr;
+
             gap: 25px;
+
             align-items: center;
         }
 
         .podcast-card {
             padding: 40px;
+
             border-radius: 20px;
 
             background:
@@ -620,16 +753,19 @@
                     rgba(0,150,255,.06)
                 );
 
-            border: 1px solid rgba(0,229,160,.2);
+            border:
+                1px solid rgba(0,229,160,.2);
         }
 
         .podcast-icon {
             font-size: 3rem;
+
             margin-bottom: 15px;
         }
 
         .podcast-card p {
             color: #9ca8b9;
+
             margin-bottom: 25px;
         }
 
@@ -637,7 +773,9 @@
             height: 220px;
 
             display: flex;
+
             justify-content: center;
+
             align-items: center;
 
             gap: 6px;
@@ -645,7 +783,9 @@
 
         .bar {
             width: 7px;
+
             height: 35px;
+
             border-radius: 10px;
 
             background: #00e5a0;
@@ -699,19 +839,28 @@
 
         .team {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+
+            grid-template-columns:
+                repeat(2,1fr);
+
             gap: 20px;
         }
 
         .member {
             display: flex;
+
             align-items: center;
+
             gap: 20px;
 
             padding: 25px;
 
-            border: 1px solid rgba(255,255,255,.08);
-            background: rgba(255,255,255,.025);
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            background:
+                rgba(255,255,255,.025);
+
             border-radius: 16px;
 
             transition: .3s;
@@ -719,7 +868,9 @@
 
         .member:hover {
             transform: translateY(-5px);
-            border-color: rgba(0,229,160,.3);
+
+            border-color:
+                rgba(0,229,160,.3);
         }
 
         .avatar {
@@ -729,9 +880,11 @@
             border-radius: 50%;
 
             display: grid;
+
             place-items: center;
 
             font-size: 1.4rem;
+
             font-weight: 900;
 
             background:
@@ -748,6 +901,7 @@
 
         .member span {
             color: #8290a2;
+
             font-size: .85rem;
         }
 
@@ -758,17 +912,23 @@
 
         .final {
             text-align: center;
+
             padding: 120px 0;
         }
 
         .final h2 {
-            font-size: clamp(2.3rem, 5vw, 4rem);
+            font-size:
+                clamp(2.3rem, 5vw, 4rem);
+
             margin-bottom: 15px;
         }
 
         .final p {
             max-width: 600px;
-            margin: 0 auto 30px;
+
+            margin:
+                0 auto 30px;
+
             color: #8e9aaa;
         }
 
@@ -779,14 +939,20 @@
 
         footer {
             padding: 30px 0;
-            border-top: 1px solid rgba(255,255,255,.07);
+
+            border-top:
+                1px solid rgba(255,255,255,.07);
+
             color: #667386;
+
             font-size: .85rem;
         }
 
         .footer-content {
             display: flex;
+
             justify-content: space-between;
+
             gap: 20px;
         }
 
@@ -808,7 +974,8 @@
             }
 
             .flow {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns:
+                    repeat(2,1fr);
             }
 
             .levels {
@@ -816,7 +983,8 @@
             }
 
             .components {
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns:
+                    repeat(2,1fr);
             }
 
             .team {
@@ -852,6 +1020,10 @@
                 padding: 12px;
             }
 
+            .circuit-img-container {
+                border-radius: 10px;
+            }
+
         }
 
     </style>
@@ -872,6 +1044,7 @@
         <a href="#inicio" class="logo">
             IRTRA<span>SafeZone</span>
         </a>
+
 
         <ul class="nav-links">
 
@@ -919,7 +1092,7 @@
 
 
 <!-- =====================================================
-     CONTENIDO PRINCIPAL
+     CONTENIDO
 ===================================================== -->
 
 <main>
@@ -934,6 +1107,7 @@
     <div class="container">
 
         <div class="hero-content">
+
 
             <div class="badge">
 
@@ -1059,9 +1233,7 @@
 
 
             <h2 class="section-title">
-
                 Seguridad antes de que ocurra el problema.
-
             </h2>
 
 
@@ -1217,9 +1389,7 @@
 
 
             <h2 class="section-title">
-
                 De la detección a la respuesta.
-
             </h2>
 
 
@@ -1551,7 +1721,7 @@
 
 
 <!-- =====================================================
-     CIRCUITO TINKERCAD / PROTOTIPO
+     PROTOTIPO
 ===================================================== -->
 
 <section id="circuito">
@@ -1587,13 +1757,16 @@
 
 
             <!-- =================================================
-                 IMAGEN DEL CIRCUITO SUBIDA POR EL USUARIO
+                 IMAGEN DEL CIRCUITO
+                 
+                 IMPORTANTE:
+                 La imagen está dentro de la carpeta "recursos".
             ================================================== -->
 
             <div class="circuit-img-container">
 
                 <img
-                    src="image.png"
+                    src="recursos/image.png"
                     alt="Circuito Tinkercad IRTRA SafeZone"
                 >
 
@@ -1641,9 +1814,7 @@
 
 
             <h2 class="section-title">
-
                 Equipo de desarrollo.
-
             </h2>
 
         </div>
@@ -1720,9 +1891,7 @@
 
 
             <h2 class="section-title">
-
                 Tecnología con propósito.
-
             </h2>
 
 
@@ -1748,9 +1917,7 @@
 
 
                 <h3>
-
                     Industria, Innovación e Infraestructura
-
                 </h3>
 
 
@@ -1774,9 +1941,7 @@
 
 
                 <h3>
-
                     Ciudades y Comunidades Sostenibles
-
                 </h3>
 
 
@@ -1839,6 +2004,10 @@
                 </p>
 
 
+                <!--
+                    El podcast también está dentro de "recursos".
+                -->
+
                 <audio
                     controls
                     style="
@@ -1851,7 +2020,7 @@
                 >
 
                     <source
-                        src="podcast.mp3"
+                        src="recursos/podcast.mp3"
                         type="audio/mpeg"
                     >
 
@@ -1865,11 +2034,17 @@
             <div class="audio-visual">
 
                 <div class="bar"></div>
+
                 <div class="bar"></div>
+
                 <div class="bar"></div>
+
                 <div class="bar"></div>
+
                 <div class="bar"></div>
+
                 <div class="bar"></div>
+
                 <div class="bar"></div>
 
             </div>
