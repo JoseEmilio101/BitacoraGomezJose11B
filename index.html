@@ -45,7 +45,7 @@
 
 
         /* =====================================================
-           FONDO
+           FONDO ANIMADO
         ===================================================== */
 
         body::before {
@@ -61,13 +61,11 @@
                     rgba(0, 255, 170, 0.08),
                     transparent 25%
                 ),
-
                 radial-gradient(
                     circle at 90% 30%,
                     rgba(0, 150, 255, 0.08),
                     transparent 25%
                 ),
-
                 radial-gradient(
                     circle at 50% 100%,
                     rgba(255, 60, 80, 0.06),
@@ -88,7 +86,6 @@
                     rgba(255,255,255,.05) 1px,
                     transparent 1px
                 ),
-
                 linear-gradient(
                     90deg,
                     rgba(255,255,255,.05) 1px,
@@ -181,6 +178,7 @@
             border-radius: 100px;
 
             background: rgba(0,229,160,.07);
+
             color: #00e5a0;
 
             font-size: .82rem;
@@ -193,6 +191,7 @@
             height: 8px;
 
             background: #00e5a0;
+
             border-radius: 50%;
 
             box-shadow: 0 0 15px #00e5a0;
@@ -216,8 +215,11 @@
 
         .hero h1 {
             font-size: clamp(3rem, 8vw, 6.5rem);
+
             line-height: .95;
+
             letter-spacing: -4px;
+
             margin-bottom: 15px;
         }
 
@@ -230,8 +232,11 @@
 
         .hero-tagline {
             font-size: 1.3rem;
+
             color: #00e5a0;
+
             font-style: italic;
+
             margin-bottom: 20px;
         }
 
@@ -263,12 +268,11 @@
             display: inline-block;
 
             cursor: pointer;
-
-            border: none;
         }
 
         .btn-primary {
             background: #00e5a0;
+
             color: #04110c;
         }
 
@@ -301,8 +305,7 @@
         .stats {
             display: grid;
 
-            grid-template-columns:
-                repeat(3,1fr);
+            grid-template-columns: repeat(3,1fr);
 
             gap: 15px;
 
@@ -312,11 +315,9 @@
         .stat {
             padding: 20px;
 
-            border:
-                1px solid rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.08);
 
-            background:
-                rgba(255,255,255,.025);
+            background: rgba(255,255,255,.025);
 
             border-radius: 12px;
         }
@@ -378,24 +379,21 @@
 
 
         /* =====================================================
-           PROBLEMÁTICA
+           PROBLEMA
         ===================================================== */
 
         .problem-grid {
             display: grid;
 
-            grid-template-columns:
-                1.2fr .8fr;
+            grid-template-columns: 1.2fr .8fr;
 
             gap: 25px;
         }
 
         .glass-card {
-            border:
-                1px solid rgba(255,255,255,.09);
+            border: 1px solid rgba(255,255,255,.09);
 
-            background:
-                rgba(255,255,255,.035);
+            background: rgba(255,255,255,.035);
 
             border-radius: 18px;
 
@@ -412,14 +410,14 @@
 
         .risk {
             display: flex;
+
             align-items: center;
 
             gap: 15px;
 
             padding: 16px 0;
 
-            border-bottom:
-                1px solid rgba(255,255,255,.07);
+            border-bottom: 1px solid rgba(255,255,255,.07);
         }
 
         .risk:last-child {
@@ -435,8 +433,7 @@
             display: grid;
             place-items: center;
 
-            background:
-                rgba(255,255,255,.05);
+            background: rgba(255,255,255,.05);
 
             font-size: 1.2rem;
         }
@@ -449,8 +446,7 @@
         .flow {
             display: grid;
 
-            grid-template-columns:
-                repeat(4,1fr);
+            grid-template-columns: repeat(4,1fr);
 
             gap: 15px;
         }
@@ -458,13 +454,11 @@
         .flow-card {
             padding: 25px;
 
-            border:
-                1px solid rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.08);
 
             border-radius: 15px;
 
-            background:
-                rgba(255,255,255,.025);
+            background: rgba(255,255,255,.025);
 
             position: relative;
         }
@@ -497,8 +491,7 @@
         .levels {
             display: grid;
 
-            grid-template-columns:
-                repeat(3,1fr);
+            grid-template-columns: repeat(3,1fr);
 
             gap: 20px;
         }
@@ -508,11 +501,9 @@
 
             border-radius: 18px;
 
-            border:
-                1px solid rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.08);
 
-            background:
-                rgba(255,255,255,.025);
+            background: rgba(255,255,255,.025);
 
             transition: .3s;
         }
@@ -577,8 +568,7 @@
         .components {
             display: grid;
 
-            grid-template-columns:
-                repeat(4,1fr);
+            grid-template-columns: repeat(4,1fr);
 
             gap: 15px;
         }
@@ -588,11 +578,9 @@
 
             padding: 25px 15px;
 
-            border:
-                1px solid rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.08);
 
-            background:
-                rgba(255,255,255,.025);
+            background: rgba(255,255,255,.025);
 
             border-radius: 15px;
         }
@@ -611,14 +599,13 @@
 
 
         /* =====================================================
-           PROTOTIPO
+           CIRCUITO / PROTOTIPO
         ===================================================== */
 
         .circuit-box {
-            padding: 40px;
+            padding: 25px;
 
-            border:
-                1px dashed rgba(0,229,160,.3);
+            border: 1px dashed rgba(0,229,160,.3);
 
             border-radius: 20px;
 
@@ -632,232 +619,20 @@
             text-align: center;
         }
 
-        .circuit-box p {
-            color: #8e9aaa;
+        /*
+           IMPORTANTE:
 
-            margin-bottom: 25px;
-        }
+           La imagen NO se muestra aquí.
 
+           Se abrirá en una nueva pestaña al presionar
+           el botón "Ver documentación".
 
-        /* =====================================================
-           MODAL DE DOCUMENTACIÓN
-        ===================================================== */
+           Ubicación:
 
-        .modal {
-            display: none;
-
-            position: fixed;
-
-            z-index: 2000;
-
-            left: 0;
-            top: 0;
-
-            width: 100%;
-            height: 100%;
-
-            background:
-                rgba(0, 0, 0, 0.90);
-
-            backdrop-filter: blur(8px);
-
-            padding: 40px;
-
-            overflow: auto;
-        }
-
-        .modal.active {
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-        }
-
-        .modal-content {
-            position: relative;
-
-            width: 100%;
-
-            max-width: 1100px;
-
-            max-height: 90vh;
-
-            text-align: center;
-        }
-
-        .modal-content img {
-            max-width: 100%;
-
-            max-height: 82vh;
-
-            width: auto;
-
-            height: auto;
-
-            object-fit: contain;
-
-            border-radius: 12px;
-
-            border:
-                1px solid rgba(255,255,255,.15);
-
-            box-shadow:
-                0 20px 80px rgba(0,0,0,.6);
-        }
-
-        .close-modal {
-            position: absolute;
-
-            top: -45px;
-            right: 0;
-
-            width: 40px;
-            height: 40px;
-
-            border-radius: 50%;
-
-            border: 1px solid
-                rgba(255,255,255,.2);
-
-            background:
-                rgba(255,255,255,.08);
-
-            color: white;
-
-            font-size: 1.5rem;
-
-            cursor: pointer;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            transition: .3s;
-        }
-
-        .close-modal:hover {
-            background: #ff4055;
-
-            border-color: #ff4055;
-
-            transform: rotate(90deg);
-        }
-
-        .modal-title {
-            color: #00e5a0;
-
-            margin-bottom: 15px;
-
-            font-size: 1.3rem;
-        }
-
-
-        /* =====================================================
-           EQUIPO
-        ===================================================== */
-
-        .team {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-            gap: 20px;
-        }
-
-        .member {
-            display: flex;
-
-            align-items: center;
-
-            gap: 20px;
-
-            padding: 25px;
-
-            border:
-                1px solid rgba(255,255,255,.08);
-
-            background:
-                rgba(255,255,255,.025);
-
-            border-radius: 16px;
-        }
-
-        .avatar {
-            width: 65px;
-            height: 65px;
-
-            border-radius: 50%;
-
-            display: grid;
-            place-items: center;
-
-            font-size: 1.4rem;
-
-            font-weight: 900;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #00e5a0,
-                    #0077ff
-                );
-
-            color: #fff;
-        }
-
-        .member span {
-            color: #8290a2;
-
-            font-size: .85rem;
-        }
-
-
-        /* =====================================================
-           ODS
-        ===================================================== */
-
-        .ods {
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 20px;
-        }
-
-        .ods-card {
-            padding: 35px;
-
-            border-radius: 18px;
-
-            border:
-                1px solid rgba(255,255,255,.09);
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0,229,160,.08),
-                    rgba(255,255,255,.02)
-                );
-        }
-
-        .ods-number {
-            font-size: 3rem;
-
-            font-weight: 900;
-
-            color: #00e5a0;
-        }
-
-        .ods-card p {
-            color: #99a5b6;
-
-            margin-top: 10px;
-        }
+           recursos/
+               img/
+                   imagen.png
+        */
 
 
         /* =====================================================
@@ -867,8 +642,7 @@
         .podcast {
             display: grid;
 
-            grid-template-columns:
-                1fr .8fr;
+            grid-template-columns: 1fr .8fr;
 
             gap: 25px;
 
@@ -887,8 +661,7 @@
                     rgba(0,150,255,.06)
                 );
 
-            border:
-                1px solid rgba(0,229,160,.2);
+            border: 1px solid rgba(0,229,160,.2);
         }
 
         .podcast-icon {
@@ -968,6 +741,65 @@
 
 
         /* =====================================================
+           EQUIPO
+        ===================================================== */
+
+        .team {
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 20px;
+        }
+
+        .member {
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 25px;
+
+            border: 1px solid rgba(255,255,255,.08);
+
+            background: rgba(255,255,255,.025);
+
+            border-radius: 16px;
+        }
+
+        .avatar {
+            width: 65px;
+            height: 65px;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            font-size: 1.4rem;
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00e5a0,
+                    #0077ff
+                );
+
+            color: #fff;
+        }
+
+        .member span {
+            color: #8290a2;
+
+            font-size: .85rem;
+        }
+
+
+        /* =====================================================
            CTA FINAL
         ===================================================== */
 
@@ -978,8 +810,7 @@
         }
 
         .final h2 {
-            font-size:
-                clamp(2.3rem, 5vw, 4rem);
+            font-size: clamp(2.3rem, 5vw, 4rem);
 
             margin-bottom: 15px;
         }
@@ -987,8 +818,7 @@
         .final p {
             max-width: 600px;
 
-            margin:
-                0 auto 30px;
+            margin: 0 auto 30px;
 
             color: #8e9aaa;
         }
@@ -1001,8 +831,7 @@
         footer {
             padding: 30px 0;
 
-            border-top:
-                1px solid rgba(255,255,255,.07);
+            border-top: 1px solid rgba(255,255,255,.07);
 
             color: #667386;
 
@@ -1035,8 +864,7 @@
             }
 
             .flow {
-                grid-template-columns:
-                    repeat(2,1fr);
+                grid-template-columns: repeat(2,1fr);
             }
 
             .levels {
@@ -1044,8 +872,7 @@
             }
 
             .components {
-                grid-template-columns:
-                    repeat(2,1fr);
+                grid-template-columns: repeat(2,1fr);
             }
 
             .team {
@@ -1056,12 +883,7 @@
                 grid-template-columns: 1fr;
             }
 
-            .circuit-box {
-                padding: 25px;
-            }
-
         }
-
 
         @media (max-width: 500px) {
 
@@ -1081,19 +903,9 @@
                 flex-direction: column;
             }
 
-            .modal {
-                padding: 20px;
-            }
-
-            .close-modal {
-                top: -50px;
-                right: 0;
-            }
-
         }
 
     </style>
-
 </head>
 
 
@@ -1158,10 +970,15 @@
 
 
 <!-- =====================================================
-     HERO
+     CONTENIDO PRINCIPAL
 ===================================================== -->
 
 <main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="hero" id="inicio">
 
@@ -1179,24 +996,26 @@
 
 
             <h1>
+
                 IRTRA<br>
+
                 <span>SafeZone</span>
+
             </h1>
 
 
             <p class="hero-tagline">
 
-                "Una solución inteligente para detectar,
-                alertar y proteger."
+                "Una solución inteligente para detectar, alertar y proteger."
 
             </p>
 
 
             <p class="hero-description">
 
-                Sistema autónomo de detección de proximidad
-                y alerta diseñado para proteger zonas de
-                acceso restringido dentro del IRTRA Petapa.
+                Sistema autónomo de detección de proximidad y alerta
+                diseñado para proteger zonas de acceso restringido
+                dentro del IRTRA Petapa.
 
             </p>
 
@@ -1280,22 +1099,25 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 01 / Problemática
             </div>
 
+
             <h2 class="section-title">
                 Seguridad antes de que ocurra el problema.
             </h2>
 
+
             <p class="section-description">
 
-                La gran cantidad de visitantes y trabajadores
-                que circulan dentro de un parque recreativo hace
-                necesario contar con herramientas que apoyen la
-                vigilancia de determinadas áreas.
+                La gran cantidad de visitantes y trabajadores que
+                circulan dentro de un parque recreativo hace necesario
+                contar con herramientas que apoyen la vigilancia de
+                determinadas áreas.
 
             </p>
 
@@ -1311,16 +1133,19 @@
                     El reto
                 </h3>
 
+
                 <p>
 
                     La ausencia de un sistema autónomo de alerta
-                    inmediata en determinadas zonas restringidas
-                    puede dificultar la detección oportuna de
-                    personas que ingresen a áreas técnicas o de riesgo.
+                    inmediata en determinadas zonas restringidas puede
+                    dificultar la detección oportuna de personas que
+                    ingresen a áreas técnicas o de riesgo.
 
                 </p>
 
+
                 <br>
+
 
                 <p>
 
@@ -1328,10 +1153,10 @@
                         Nuestra Solución:
                     </strong>
 
-                    Implementar un sistema automatizado que
-                    detecte movimiento y genere inmediatamente
-                    señales visuales y sonoras para alertar al
-                    personal y prevenir accidentes.
+                    Implementar un sistema automatizado que detecte
+                    movimiento y genere inmediatamente señales visuales
+                    y sonoras para alertar al personal y prevenir
+                    accidentes.
 
                 </p>
 
@@ -1356,8 +1181,7 @@
                         <br>
 
                         <small>
-                            Una persona se aproxima o ingresa
-                            a una zona restringida.
+                            Una persona se aproxima o ingresa a una zona restringida.
                         </small>
 
                     </div>
@@ -1380,8 +1204,7 @@
                         <br>
 
                         <small>
-                            Sensores miden distancia y detectan
-                            presencia constante.
+                            Sensores miden distancia y detectan presencia constante.
                         </small>
 
                     </div>
@@ -1404,8 +1227,7 @@
                         <br>
 
                         <small>
-                            LEDs y buzzer comunican el peligro
-                            en tiempo real.
+                            LEDs y buzzer comunican el peligro en tiempo real.
                         </small>
 
                     </div>
@@ -1430,21 +1252,24 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 02 / Funcionamiento
             </div>
 
+
             <h2 class="section-title">
                 De la detección a la respuesta.
             </h2>
 
+
             <p class="section-description">
 
-                El sensor detecta movimiento o proximidad
-                → Arduino procesa la señal
-                → Se activan las alertas.
+                El sensor detecta movimiento o proximidad →
+                Arduino procesa la señal →
+                Se activan las alertas.
 
             </p>
 
@@ -1466,9 +1291,8 @@
 
                 <p>
 
-                    El sensor HC-SR04 / PIR identifica
-                    la presencia o distancia de una persona
-                    en la zona.
+                    El sensor (HC-SR04 / PIR) identifica la presencia
+                    o distancia de una persona en la zona.
 
                 </p>
 
@@ -1487,9 +1311,8 @@
 
                 <p>
 
-                    La placa Arduino Uno R3 procesa
-                    la señal enviada por el sensor
-                    en tiempo real.
+                    La placa Arduino Uno R3 procesa la señal enviada
+                    por el sensor en tiempo real.
 
                 </p>
 
@@ -1508,9 +1331,8 @@
 
                 <p>
 
-                    Se activan los LEDs configurados
-                    para indicar visualmente el estado
-                    del área.
+                    Se activan los LEDs configurados para indicar
+                    visualmente el estado del área.
 
                 </p>
 
@@ -1529,8 +1351,8 @@
 
                 <p>
 
-                    El buzzer emite un tono de advertencia
-                    audible para alertar al entorno.
+                    El buzzer emite un tono de advertencia audible
+                    para alertar al entorno.
 
                 </p>
 
@@ -1552,11 +1374,13 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 03 / Niveles de seguridad
             </div>
+
 
             <h2 class="section-title">
                 Tres distancias. Tres respuestas.
@@ -1649,11 +1473,13 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 04 / Tecnología y Materiales
             </div>
+
 
             <h2 class="section-title">
                 Los componentes detrás del sistema.
@@ -1677,8 +1503,8 @@
 
                 <p>
 
-                    Microcontrolador principal que procesa
-                    las señales y gestiona las salidas.
+                    Microcontrolador principal que procesa las
+                    señales y gestiona las salidas.
 
                 </p>
 
@@ -1697,8 +1523,8 @@
 
                 <p>
 
-                    HC-SR04 (Ultrasónico) y Sensor PIR
-                    para medir distancia y movimiento.
+                    HC-SR04 (Ultrasónico) y Sensor PIR para medir
+                    distancia y movimiento.
 
                 </p>
 
@@ -1717,8 +1543,8 @@
 
                 <p>
 
-                    Indicadores luminosos complementados
-                    con resistencias de protección.
+                    Indicadores luminosos complementados con
+                    resistencias de protección.
 
                 </p>
 
@@ -1737,9 +1563,8 @@
 
                 <p>
 
-                    Zumbador acústico, Protoboard y
-                    Cables Jumper para la interconexión
-                    del circuito.
+                    Zumbador acústico, Protoboard y Cables Jumper
+                    para la interconexión del circuito.
 
                 </p>
 
@@ -1776,8 +1601,8 @@
 
             <p class="section-description">
 
-                Diseño del prototipo desarrollado y simulado
-                en Tinkercad Circuits con Arduino Uno R3.
+                Diseño del prototipo desarrollado y simulado en
+                Tinkercad Circuits con Arduino Uno R3.
 
             </p>
 
@@ -1787,23 +1612,27 @@
         <div class="circuit-box">
 
 
-            <p>
+            <p style="color: #8e9aaa; margin-bottom: 25px;">
 
-                Haz clic en el botón para visualizar
-                la documentación gráfica del circuito
-                de IRTRA SafeZone.
+                Visualización de las conexiones del sensor ultrasónico
+                HC-SR04, LEDs de alerta, buzzer y resistencias
+                conectados al Arduino Uno R3.
 
             </p>
 
 
-            <!-- BOTÓN QUE ABRE LA IMAGEN -->
+            <!-- =================================================
+                 BOTÓN PARA ABRIR LA IMAGEN EN OTRA PESTAÑA
+            ================================================== -->
 
-            <button
+            <a
+                href="recursos/img/imagen.png"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="btn btn-primary"
-                onclick="abrirModal()"
             >
-                📄 Ver documentación
-            </button>
+                Ver documentación
+            </a>
 
 
         </div>
@@ -1811,45 +1640,6 @@
     </div>
 
 </section>
-
-
-<!-- =====================================================
-     MODAL
-===================================================== -->
-
-<div
-    id="documentacionModal"
-    class="modal"
-    onclick="cerrarModal(event)"
->
-
-
-    <div class="modal-content">
-
-
-        <button
-            class="close-modal"
-            onclick="cerrarModal()"
-            aria-label="Cerrar"
-        >
-            ×
-        </button>
-
-
-        <div class="modal-title">
-            IRTRA SafeZone — Esquema del circuito
-        </div>
-
-
-        <img
-            src="recursos/img/imagen.png"
-            alt="Esquema del circuito IRTRA SafeZone"
-        >
-
-
-    </div>
-
-</div>
 
 
 <!-- =====================================================
@@ -1950,9 +1740,9 @@
 
             <p class="section-description">
 
-                El proyecto relaciona la automatización
-                y la innovación tecnológica con los
-                Objetivos de Desarrollo Sostenible.
+                El proyecto relaciona la automatización y la
+                innovación tecnológica con los Objetivos de
+                Desarrollo Sostenible.
 
             </p>
 
@@ -1976,10 +1766,10 @@
 
                 <p>
 
-                    El proyecto promueve el uso de tecnología
-                    y automatización para desarrollar soluciones
-                    que mejoren el funcionamiento y la seguridad
-                    de determinados espacios.
+                    El proyecto promueve el uso de tecnología y
+                    automatización para desarrollar soluciones que
+                    mejoren el funcionamiento y la seguridad de
+                    determinados espacios.
 
                 </p>
 
@@ -2000,9 +1790,9 @@
 
                 <p>
 
-                    La propuesta busca contribuir a una mejor
-                    gestión y seguridad de espacios públicos
-                    y recreativos utilizados por las personas.
+                    La propuesta busca contribuir a una mejor gestión
+                    y seguridad de espacios públicos y recreativos
+                    utilizados por las personas.
 
                 </p>
 
@@ -2030,7 +1820,6 @@
 
             <div class="podcast-card">
 
-
                 <div class="podcast-icon">
                     🎙️
                 </div>
@@ -2048,10 +1837,9 @@
 
                 <p>
 
-                    Conoce la problemática, el funcionamiento
-                    del circuito, sus componentes, los niveles
-                    de alerta y el impacto del proyecto explicados
-                    por el equipo.
+                    Conoce la problemática, el funcionamiento del
+                    circuito, sus componentes, los niveles de alerta
+                    y el impacto del proyecto explicados por el equipo.
 
                 </p>
 
@@ -2061,9 +1849,7 @@
                     style="
                         width: 100%;
                         margin-top: 10px;
-                        filter:
-                            invert(0.9)
-                            hue-rotate(120deg);
+                        filter: invert(0.9) hue-rotate(120deg);
                     "
                 >
 
@@ -2072,11 +1858,9 @@
                         type="audio/mpeg"
                     >
 
-                    Tu navegador no soporta
-                    el elemento de audio.
+                    Tu navegador no soporta el elemento de audio.
 
                 </audio>
-
 
             </div>
 
@@ -2117,8 +1901,8 @@
 
         <p>
 
-            Innovación y automatización al servicio
-            de la seguridad de los visitantes y colaboradores.
+            Innovación y automatización al servicio de la seguridad
+            de los visitantes y colaboradores.
 
         </p>
 
@@ -2166,79 +1950,6 @@
     </div>
 
 </footer>
-
-
-<!-- =====================================================
-     JAVASCRIPT DEL MODAL
-===================================================== -->
-
-<script>
-
-    function abrirModal() {
-
-        const modal =
-            document.getElementById(
-                "documentacionModal"
-            );
-
-        modal.classList.add("active");
-
-        document.body.style.overflow = "hidden";
-    }
-
-
-    function cerrarModal(event) {
-
-        const modal =
-            document.getElementById(
-                "documentacionModal"
-            );
-
-
-        /*
-         * Si se hizo clic directamente
-         * en el fondo oscuro, se cierra.
-         */
-
-        if (
-            !event ||
-            event.target === modal ||
-            event.target.classList.contains("close-modal")
-        ) {
-
-            modal.classList.remove("active");
-
-            document.body.style.overflow = "auto";
-        }
-
-    }
-
-
-    /*
-     * También permite cerrar el modal
-     * presionando la tecla ESC.
-     */
-
-    document.addEventListener(
-        "keydown",
-        function(event) {
-
-            if (event.key === "Escape") {
-
-                const modal =
-                    document.getElementById(
-                        "documentacionModal"
-                    );
-
-                modal.classList.remove("active");
-
-                document.body.style.overflow = "auto";
-            }
-
-        }
-    );
-
-</script>
 
 
 </body>
