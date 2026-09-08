@@ -45,7 +45,7 @@
 
 
         /* =====================================================
-           FONDO
+           FONDO ANIMADO
         ===================================================== */
 
         body::before {
@@ -61,11 +61,13 @@
                     rgba(0, 255, 170, 0.08),
                     transparent 25%
                 ),
+
                 radial-gradient(
                     circle at 90% 30%,
                     rgba(0, 150, 255, 0.08),
                     transparent 25%
                 ),
+
                 radial-gradient(
                     circle at 50% 100%,
                     rgba(255, 60, 80, 0.06),
@@ -86,6 +88,7 @@
                     rgba(255,255,255,.05) 1px,
                     transparent 1px
                 ),
+
                 linear-gradient(
                     90deg,
                     rgba(255,255,255,.05) 1px,
@@ -190,7 +193,6 @@
             height: 8px;
 
             background: #00e5a0;
-
             border-radius: 50%;
 
             box-shadow: 0 0 15px #00e5a0;
@@ -283,6 +285,7 @@
 
         .btn-secondary:hover {
             border-color: #00e5a0;
+
             transform: translateY(-3px);
         }
 
@@ -305,7 +308,8 @@
         .stat {
             padding: 20px;
 
-            border: 1px solid rgba(255,255,255,.08);
+            border:
+                1px solid rgba(255,255,255,.08);
 
             background:
                 rgba(255,255,255,.025);
@@ -357,8 +361,7 @@
         }
 
         .section-title {
-            font-size:
-                clamp(2rem, 5vw, 3.3rem);
+            font-size: clamp(2rem, 5vw, 3.3rem);
 
             line-height: 1.05;
 
@@ -405,7 +408,6 @@
 
         .risk {
             display: flex;
-
             align-items: center;
 
             gap: 15px;
@@ -433,8 +435,6 @@
                 rgba(255,255,255,.05);
 
             font-size: 1.2rem;
-
-            flex-shrink: 0;
         }
 
 
@@ -461,6 +461,8 @@
 
             background:
                 rgba(255,255,255,.025);
+
+            position: relative;
         }
 
         .flow-number {
@@ -589,15 +591,6 @@
                 rgba(255,255,255,.025);
 
             border-radius: 15px;
-
-            transition: .3s;
-        }
-
-        .component:hover {
-            transform: translateY(-5px);
-
-            border-color:
-                rgba(0,229,160,.3);
         }
 
         .component-icon {
@@ -608,6 +601,125 @@
 
         .component p {
             color: #8793a5;
+
+            font-size: .85rem;
+        }
+
+
+        /* =====================================================
+           CIRCUITO / PROTOTIPO
+        ===================================================== */
+
+        .circuit-box {
+            padding: 25px;
+
+            border:
+                1px dashed rgba(0,229,160,.3);
+
+            border-radius: 20px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,229,160,.06),
+                    transparent 60%
+                );
+
+            text-align: center;
+        }
+
+        .circuit-img-container {
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: 0 auto 25px;
+
+            overflow: hidden;
+
+            border-radius: 12px;
+
+            border:
+                1px solid rgba(255,255,255,.1);
+
+            background: #000;
+        }
+
+        .circuit-img-container img {
+            width: 100%;
+
+            height: auto;
+
+            display: block;
+
+            object-fit: contain;
+        }
+
+        .circuit-description {
+            color: #8e9aaa;
+
+            margin-bottom: 20px;
+
+            font-size: .98rem;
+        }
+
+
+        /* =====================================================
+           EQUIPO
+        ===================================================== */
+
+        .team {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap: 20px;
+        }
+
+        .member {
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+
+            padding: 25px;
+
+            border:
+                1px solid rgba(255,255,255,.08);
+
+            background:
+                rgba(255,255,255,.025);
+
+            border-radius: 16px;
+        }
+
+        .avatar {
+            width: 65px;
+            height: 65px;
+
+            border-radius: 50%;
+
+            display: grid;
+            place-items: center;
+
+            font-size: 1.4rem;
+
+            font-weight: 900;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00e5a0,
+                    #0077ff
+                );
+
+            color: #fff;
+        }
+
+        .member span {
+            color: #8290a2;
 
             font-size: .85rem;
         }
@@ -640,12 +752,6 @@
                     rgba(0,229,160,.08),
                     rgba(255,255,255,.02)
                 );
-
-            transition: .3s;
-        }
-
-        .ods-card:hover {
-            transform: translateY(-5px);
         }
 
         .ods-number {
@@ -660,69 +766,6 @@
             color: #99a5b6;
 
             margin-top: 10px;
-        }
-
-
-        /* =====================================================
-           PROTOTIPO / CIRCUITO
-        ===================================================== */
-
-        .circuit-box {
-            padding: 25px;
-
-            border:
-                1px dashed rgba(0,229,160,.3);
-
-            border-radius: 20px;
-
-            background:
-                radial-gradient(
-                    circle,
-                    rgba(0,229,160,.06),
-                    transparent 60%
-                );
-
-            text-align: center;
-        }
-
-        .circuit-img-container {
-            width: 100%;
-
-            max-width: 1100px;
-
-            margin:
-                0 auto 25px;
-
-            overflow: hidden;
-
-            border-radius: 14px;
-
-            border:
-                1px solid rgba(255,255,255,.1);
-
-            background: #000;
-
-            box-shadow:
-                0 20px 60px rgba(0,0,0,.35);
-        }
-
-        .circuit-img-container img {
-            width: 100%;
-
-            height: auto;
-
-            display: block;
-        }
-
-        .circuit-description {
-            max-width: 850px;
-
-            margin:
-                0 auto 25px;
-
-            color: #8e9aaa;
-
-            font-size: .95rem;
         }
 
 
@@ -830,79 +873,6 @@
                 opacity: 1;
             }
 
-        }
-
-
-        /* =====================================================
-           EQUIPO
-        ===================================================== */
-
-        .team {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2,1fr);
-
-            gap: 20px;
-        }
-
-        .member {
-            display: flex;
-
-            align-items: center;
-
-            gap: 20px;
-
-            padding: 25px;
-
-            border:
-                1px solid rgba(255,255,255,.08);
-
-            background:
-                rgba(255,255,255,.025);
-
-            border-radius: 16px;
-
-            transition: .3s;
-        }
-
-        .member:hover {
-            transform: translateY(-5px);
-
-            border-color:
-                rgba(0,229,160,.3);
-        }
-
-        .avatar {
-            width: 65px;
-            height: 65px;
-
-            border-radius: 50%;
-
-            display: grid;
-
-            place-items: center;
-
-            font-size: 1.4rem;
-
-            font-weight: 900;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #00e5a0,
-                    #0077ff
-                );
-
-            color: #fff;
-
-            flex-shrink: 0;
-        }
-
-        .member span {
-            color: #8290a2;
-
-            font-size: .85rem;
         }
 
 
@@ -1017,11 +987,7 @@
             }
 
             .circuit-box {
-                padding: 12px;
-            }
-
-            .circuit-img-container {
-                border-radius: 10px;
+                padding: 15px;
             }
 
         }
@@ -1044,7 +1010,6 @@
         <a href="#inicio" class="logo">
             IRTRA<span>SafeZone</span>
         </a>
-
 
         <ul class="nav-links">
 
@@ -1092,7 +1057,7 @@
 
 
 <!-- =====================================================
-     CONTENIDO
+     CONTENIDO PRINCIPAL
 ===================================================== -->
 
 <main>
@@ -1108,7 +1073,6 @@
 
         <div class="hero-content">
 
-
             <div class="badge">
 
                 <span class="pulse"></span>
@@ -1122,25 +1086,24 @@
 
                 IRTRA<br>
 
-                <span>
-                    SafeZone
-                </span>
+                <span>SafeZone</span>
 
             </h1>
 
 
             <p class="hero-tagline">
 
-                "Una solución inteligente para detectar, alertar y proteger."
+                "Una solución inteligente para detectar,
+                alertar y proteger."
 
             </p>
 
 
             <p class="hero-description">
 
-                Sistema autónomo de detección de proximidad y alerta
-                diseñado para proteger zonas de acceso restringido
-                dentro del IRTRA Petapa.
+                Sistema autónomo de detección de proximidad
+                y alerta diseñado para proteger zonas de
+                acceso restringido dentro del IRTRA Petapa.
 
             </p>
 
@@ -1239,10 +1202,10 @@
 
             <p class="section-description">
 
-                La gran cantidad de visitantes y trabajadores que
-                circulan dentro de un parque recreativo hace necesario
-                contar con herramientas que apoyen la vigilancia de
-                determinadas áreas.
+                La gran cantidad de visitantes y trabajadores
+                que circulan dentro de un parque recreativo
+                hace necesario contar con herramientas que
+                apoyen la vigilancia de determinadas áreas.
 
             </p>
 
@@ -1278,10 +1241,10 @@
                         Nuestra Solución:
                     </strong>
 
-                    Implementar un sistema automatizado que detecte
-                    movimiento y genere inmediatamente señales
-                    visuales y sonoras para alertar al personal
-                    y prevenir accidentes.
+                    Implementar un sistema automatizado que
+                    detecte movimiento y genere inmediatamente
+                    señales visuales y sonoras para alertar al
+                    personal y prevenir accidentes.
 
                 </p>
 
@@ -1306,8 +1269,8 @@
                         <br>
 
                         <small>
-                            Una persona se aproxima o ingresa a una
-                            zona restringida.
+                            Una persona se aproxima o ingresa
+                            a una zona restringida.
                         </small>
 
                     </div>
@@ -1419,8 +1382,8 @@
 
                 <p>
 
-                    El sensor (HC-SR04 / PIR) identifica la
-                    presencia o distancia de una persona
+                    El sensor HC-SR04 / PIR identifica
+                    la presencia o distancia de una persona
                     en la zona.
 
                 </p>
@@ -1440,8 +1403,9 @@
 
                 <p>
 
-                    La placa Arduino Uno R3 procesa la señal
-                    enviada por el sensor en tiempo real.
+                    La placa Arduino Uno R3 procesa
+                    la señal enviada por el sensor
+                    en tiempo real.
 
                 </p>
 
@@ -1460,8 +1424,9 @@
 
                 <p>
 
-                    Se activan los LEDs configurados para
-                    indicar visualmente el estado del área.
+                    Se activan los LEDs configurados
+                    para indicar visualmente el estado
+                    del área.
 
                 </p>
 
@@ -1512,9 +1477,7 @@
 
 
             <h2 class="section-title">
-
                 Tres distancias. Tres respuestas.
-
             </h2>
 
         </div>
@@ -1622,9 +1585,7 @@
 
 
             <h2 class="section-title">
-
                 Los componentes detrás del sistema.
-
             </h2>
 
         </div>
@@ -1705,8 +1666,9 @@
 
                 <p>
 
-                    Zumbador acústico, Protoboard y Cables
-                    Jumper para la interconexión del circuito.
+                    Zumbador acústico, Protoboard y
+                    Cables Jumper para la interconexión
+                    del circuito.
 
                 </p>
 
@@ -1721,7 +1683,7 @@
 
 
 <!-- =====================================================
-     PROTOTIPO
+     PROTOTIPO / CIRCUITO
 ===================================================== -->
 
 <section id="circuito">
@@ -1737,9 +1699,7 @@
 
 
             <h2 class="section-title">
-
                 Esquema del circuito en Tinkercad.
-
             </h2>
 
 
@@ -1760,14 +1720,21 @@
                  IMAGEN DEL CIRCUITO
                  
                  IMPORTANTE:
-                 La imagen está dentro de la carpeta "recursos".
+                 La imagen está dentro de:
+
+                 recursos/
+                    img/
+                       imagen.png
+
+                 Por eso la ruta correcta es:
+                 recursos/img/imagen.png
             ================================================== -->
 
             <div class="circuit-img-container">
 
                 <img
-                    src="recursos/image.png"
-                    alt="Circuito Tinkercad IRTRA SafeZone"
+                    src="recursos/img/imagen.png"
+                    alt="Esquema del circuito Tinkercad de IRTRA SafeZone"
                 >
 
             </div>
@@ -1829,7 +1796,6 @@
                     AL
                 </div>
 
-
                 <div>
 
                     <h3>
@@ -1850,7 +1816,6 @@
                 <div class="avatar">
                     EG
                 </div>
-
 
                 <div>
 
@@ -1897,9 +1862,9 @@
 
             <p class="section-description">
 
-                El proyecto relaciona la automatización y la
-                innovación tecnológica con los Objetivos de
-                Desarrollo Sostenible.
+                El proyecto relaciona la automatización
+                y la innovación tecnológica con los
+                Objetivos de Desarrollo Sostenible.
 
             </p>
 
@@ -1977,6 +1942,7 @@
 
             <div class="podcast-card">
 
+
                 <div class="podcast-icon">
                     🎙️
                 </div>
@@ -1988,9 +1954,7 @@
 
 
                 <h2 class="section-title">
-
                     Escucha cómo funciona SafeZone.
-
                 </h2>
 
 
@@ -1998,15 +1962,11 @@
 
                     Conoce la problemática, el funcionamiento
                     del circuito, sus componentes, los niveles
-                    de alerta y el impacto del proyecto
-                    explicados por el equipo.
+                    de alerta y el impacto del proyecto explicados
+                    por el equipo.
 
                 </p>
 
-
-                <!--
-                    El podcast también está dentro de "recursos".
-                -->
 
                 <audio
                     controls
@@ -2020,13 +1980,15 @@
                 >
 
                     <source
-                        src="recursos/podcast.mp3"
+                        src="podcast.mp3"
                         type="audio/mpeg"
                     >
 
-                    Tu navegador no soporta el elemento de audio.
+                    Tu navegador no soporta
+                    el elemento de audio.
 
                 </audio>
+
 
             </div>
 
@@ -2034,17 +1996,11 @@
             <div class="audio-visual">
 
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
-
                 <div class="bar"></div>
 
             </div>
