@@ -10,6 +10,7 @@
           content="IRTRA SafeZone - Sistema autónomo de detección de proximidad y alerta para zonas restringidas del IRTRA Petapa.">
 
     <style>
+
         /* =====================================================
            CONFIGURACIÓN GENERAL
         ===================================================== */
@@ -42,6 +43,7 @@
             margin: auto;
         }
 
+
         /* =====================================================
            FONDO ANIMADO
         ===================================================== */
@@ -54,9 +56,21 @@
             z-index: -2;
 
             background:
-                radial-gradient(circle at 10% 20%, rgba(0, 255, 170, 0.08), transparent 25%),
-                radial-gradient(circle at 90% 30%, rgba(0, 150, 255, 0.08), transparent 25%),
-                radial-gradient(circle at 50% 100%, rgba(255, 60, 80, 0.06), transparent 30%);
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(0, 255, 170, 0.08),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 90% 30%,
+                    rgba(0, 150, 255, 0.08),
+                    transparent 25%
+                ),
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(255, 60, 80, 0.06),
+                    transparent 30%
+                );
         }
 
         body::after {
@@ -68,11 +82,19 @@
             opacity: 0.12;
 
             background-image:
-                linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+                linear-gradient(
+                    rgba(255,255,255,.05) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255,255,255,.05) 1px,
+                    transparent 1px
+                );
 
             background-size: 45px 45px;
         }
+
 
         /* =====================================================
            NAVEGACIÓN
@@ -123,6 +145,7 @@
             color: #00e5a0;
         }
 
+
         /* =====================================================
            HERO
         ===================================================== */
@@ -168,7 +191,8 @@
         }
 
         @keyframes pulse {
-            0%,100% {
+
+            0%, 100% {
                 transform: scale(1);
                 opacity: 1;
             }
@@ -177,6 +201,7 @@
                 transform: scale(1.7);
                 opacity: .5;
             }
+
         }
 
         .hero h1 {
@@ -240,6 +265,7 @@
             transform: translateY(-3px);
         }
 
+
         /* =====================================================
            ESTADÍSTICAS
         ===================================================== */
@@ -268,6 +294,7 @@
             color: #8490a2;
             font-size: .85rem;
         }
+
 
         /* =====================================================
            SECCIONES
@@ -301,8 +328,9 @@
             color: #919dae;
         }
 
+
         /* =====================================================
-           PROBLEMA
+           PROBLEMÁTICA
         ===================================================== */
 
         .problem-grid {
@@ -346,7 +374,9 @@
             place-items: center;
             background: rgba(255,255,255,.05);
             font-size: 1.2rem;
+            flex-shrink: 0;
         }
+
 
         /* =====================================================
            FUNCIONAMIENTO
@@ -381,6 +411,7 @@
             color: #8995a7;
             font-size: .9rem;
         }
+
 
         /* =====================================================
            NIVELES DE SEGURIDAD
@@ -441,6 +472,7 @@
             font-size: .9rem;
         }
 
+
         /* =====================================================
            COMPONENTES
         ===================================================== */
@@ -457,6 +489,12 @@
             border: 1px solid rgba(255,255,255,.08);
             background: rgba(255,255,255,.025);
             border-radius: 15px;
+            transition: .3s;
+        }
+
+        .component:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,229,160,.3);
         }
 
         .component-icon {
@@ -468,6 +506,7 @@
             color: #8793a5;
             font-size: .85rem;
         }
+
 
         /* =====================================================
            ODS
@@ -483,11 +522,19 @@
             padding: 35px;
             border-radius: 18px;
             border: 1px solid rgba(255,255,255,.09);
-            background: linear-gradient(
-                135deg,
-                rgba(0,229,160,.08),
-                rgba(255,255,255,.02)
-            );
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,229,160,.08),
+                    rgba(255,255,255,.02)
+                );
+
+            transition: .3s;
+        }
+
+        .ods-card:hover {
+            transform: translateY(-5px);
         }
 
         .ods-number {
@@ -501,26 +548,41 @@
             margin-top: 10px;
         }
 
+
         /* =====================================================
-           CIRCUITO
+           CIRCUITO / PROTOTIPO
         ===================================================== */
 
         .circuit-box {
             padding: 25px;
+
             border: 1px dashed rgba(0,229,160,.3);
             border-radius: 20px;
-            background: radial-gradient(circle, rgba(0,229,160,.06), transparent 60%);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0,229,160,.06),
+                    transparent 60%
+                );
+
             text-align: center;
         }
 
         .circuit-img-container {
             width: 100%;
-            max-width: 850px;
-            margin: 0 auto 20px;
+            max-width: 1000px;
+            margin: 0 auto 25px;
+
             overflow: hidden;
-            border-radius: 12px;
+
+            border-radius: 14px;
             border: 1px solid rgba(255,255,255,.1);
+
             background: #000;
+
+            box-shadow:
+                0 20px 60px rgba(0,0,0,.35);
         }
 
         .circuit-img-container img {
@@ -528,6 +590,13 @@
             height: auto;
             display: block;
         }
+
+        .circuit-description {
+            max-width: 850px;
+            margin: 0 auto 25px;
+            color: #8e9aaa;
+        }
+
 
         /* =====================================================
            PODCAST
@@ -543,6 +612,7 @@
         .podcast-card {
             padding: 40px;
             border-radius: 20px;
+
             background:
                 linear-gradient(
                     135deg,
@@ -565,9 +635,11 @@
 
         .audio-visual {
             height: 220px;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             gap: 6px;
         }
 
@@ -575,18 +647,39 @@
             width: 7px;
             height: 35px;
             border-radius: 10px;
+
             background: #00e5a0;
-            animation: sound 1s ease-in-out infinite alternate;
+
+            animation:
+                sound 1s ease-in-out infinite alternate;
         }
 
-        .bar:nth-child(2) { animation-delay: .1s; }
-        .bar:nth-child(3) { animation-delay: .2s; }
-        .bar:nth-child(4) { animation-delay: .3s; }
-        .bar:nth-child(5) { animation-delay: .4s; }
-        .bar:nth-child(6) { animation-delay: .2s; }
-        .bar:nth-child(7) { animation-delay: .1s; }
+        .bar:nth-child(2) {
+            animation-delay: .1s;
+        }
+
+        .bar:nth-child(3) {
+            animation-delay: .2s;
+        }
+
+        .bar:nth-child(4) {
+            animation-delay: .3s;
+        }
+
+        .bar:nth-child(5) {
+            animation-delay: .4s;
+        }
+
+        .bar:nth-child(6) {
+            animation-delay: .2s;
+        }
+
+        .bar:nth-child(7) {
+            animation-delay: .1s;
+        }
 
         @keyframes sound {
+
             from {
                 height: 20px;
                 opacity: .5;
@@ -596,7 +689,9 @@
                 height: 100px;
                 opacity: 1;
             }
+
         }
+
 
         /* =====================================================
            EQUIPO
@@ -612,28 +707,50 @@
             display: flex;
             align-items: center;
             gap: 20px;
+
             padding: 25px;
+
             border: 1px solid rgba(255,255,255,.08);
             background: rgba(255,255,255,.025);
             border-radius: 16px;
+
+            transition: .3s;
+        }
+
+        .member:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0,229,160,.3);
         }
 
         .avatar {
             width: 65px;
             height: 65px;
+
             border-radius: 50%;
+
             display: grid;
             place-items: center;
+
             font-size: 1.4rem;
             font-weight: 900;
-            background: linear-gradient(135deg, #00e5a0, #0077ff);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #00e5a0,
+                    #0077ff
+                );
+
             color: #fff;
+
+            flex-shrink: 0;
         }
 
         .member span {
             color: #8290a2;
             font-size: .85rem;
         }
+
 
         /* =====================================================
            CTA FINAL
@@ -655,6 +772,7 @@
             color: #8e9aaa;
         }
 
+
         /* =====================================================
            FOOTER
         ===================================================== */
@@ -671,6 +789,7 @@
             justify-content: space-between;
             gap: 20px;
         }
+
 
         /* =====================================================
            RESPONSIVE
@@ -707,7 +826,9 @@
             .stats {
                 grid-template-columns: 1fr;
             }
+
         }
+
 
         @media (max-width: 500px) {
 
@@ -726,17 +847,26 @@
             .footer-content {
                 flex-direction: column;
             }
+
+            .circuit-box {
+                padding: 12px;
+            }
+
         }
+
     </style>
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      NAVBAR
 ===================================================== -->
 
 <nav>
+
     <div class="container nav-content">
 
         <a href="#inicio" class="logo">
@@ -744,23 +874,60 @@
         </a>
 
         <ul class="nav-links">
-            <li><a href="#problema">Problema</a></li>
-            <li><a href="#funcionamiento">Funcionamiento</a></li>
-            <li><a href="#circuito">Circuito</a></li>
-            <li><a href="#equipo">Equipo</a></li>
-            <li><a href="#ods">ODS</a></li>
-            <li><a href="#podcast">Podcast</a></li>
+
+            <li>
+                <a href="#problema">
+                    Problema
+                </a>
+            </li>
+
+            <li>
+                <a href="#funcionamiento">
+                    Funcionamiento
+                </a>
+            </li>
+
+            <li>
+                <a href="#circuito">
+                    Circuito
+                </a>
+            </li>
+
+            <li>
+                <a href="#equipo">
+                    Equipo
+                </a>
+            </li>
+
+            <li>
+                <a href="#ods">
+                    ODS
+                </a>
+            </li>
+
+            <li>
+                <a href="#podcast">
+                    Podcast
+                </a>
+            </li>
+
         </ul>
 
     </div>
+
 </nav>
+
+
+<!-- =====================================================
+     CONTENIDO PRINCIPAL
+===================================================== -->
+
+<main>
 
 
 <!-- =====================================================
      HERO
 ===================================================== -->
-
-<main>
 
 <section class="hero" id="inicio">
 
@@ -769,53 +936,102 @@
         <div class="hero-content">
 
             <div class="badge">
+
                 <span class="pulse"></span>
+
                 SISTEMA AUTÓNOMO DE MONITOREO Y ALERTA
+
             </div>
 
+
             <h1>
+
                 IRTRA<br>
-                <span>SafeZone</span>
+
+                <span>
+                    SafeZone
+                </span>
+
             </h1>
 
+
             <p class="hero-tagline">
+
                 "Una solución inteligente para detectar, alertar y proteger."
+
             </p>
 
+
             <p class="hero-description">
+
                 Sistema autónomo de detección de proximidad y alerta
                 diseñado para proteger zonas de acceso restringido
                 dentro del IRTRA Petapa.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#funcionamiento" class="btn btn-primary">
+                <a
+                    href="#funcionamiento"
+                    class="btn btn-primary"
+                >
                     Explorar proyecto
                 </a>
 
-                <a href="#podcast" class="btn btn-secondary">
+
+                <a
+                    href="#podcast"
+                    class="btn btn-secondary"
+                >
                     🎙 Escuchar podcast
                 </a>
 
             </div>
 
+
             <div class="stats">
 
-                <div class="stat">
-                    <strong>HC-SR04 / PIR</strong>
-                    <span>Detección de proximidad y movimiento</span>
-                </div>
 
                 <div class="stat">
-                    <strong>Visual y Sonora</strong>
-                    <span>Respuesta mediante LEDs y Buzzer</span>
+
+                    <strong>
+                        HC-SR04 / PIR
+                    </strong>
+
+                    <span>
+                        Detección de proximidad y movimiento
+                    </span>
+
                 </div>
 
+
                 <div class="stat">
-                    <strong>Arduino Uno</strong>
-                    <span>Control y procesamiento autónomo</span>
+
+                    <strong>
+                        Visual y Sonora
+                    </strong>
+
+                    <span>
+                        Respuesta mediante LEDs y Buzzer
+                    </span>
+
                 </div>
+
+
+                <div class="stat">
+
+                    <strong>
+                        Arduino Uno
+                    </strong>
+
+                    <span>
+                        Control y procesamiento autónomo
+                    </span>
+
+                </div>
+
 
             </div>
 
@@ -834,18 +1050,28 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 01 / Problemática
             </div>
 
+
             <h2 class="section-title">
+
                 Seguridad antes de que ocurra el problema.
+
             </h2>
 
+
             <p class="section-description">
-                La gran cantidad de visitantes y trabajadores que circulan dentro de un parque recreativo hace necesario contar con herramientas que apoyen la vigilancia de determinadas áreas.
+
+                La gran cantidad de visitantes y trabajadores que
+                circulan dentro de un parque recreativo hace necesario
+                contar con herramientas que apoyen la vigilancia de
+                determinadas áreas.
+
             </p>
 
         </div>
@@ -853,18 +1079,38 @@
 
         <div class="problem-grid">
 
+
             <div class="glass-card">
 
-                <h3>El reto</h3>
+                <h3>
+                    El reto
+                </h3>
+
 
                 <p>
-                    La ausencia de un sistema autónomo de alerta inmediata en determinadas zonas restringidas puede dificultar la detección oportuna de personas que ingresen a áreas técnicas o de riesgo.
+
+                    La ausencia de un sistema autónomo de alerta
+                    inmediata en determinadas zonas restringidas
+                    puede dificultar la detección oportuna de
+                    personas que ingresen a áreas técnicas o de riesgo.
+
                 </p>
+
 
                 <br>
 
+
                 <p>
-                    <strong>Nuestra Solución:</strong> Implementar un sistema automatizado que detecte movimiento y genere inmediatamente señales visuales y sonoras para alertar al personal y prevenir accidentes.
+
+                    <strong>
+                        Nuestra Solución:
+                    </strong>
+
+                    Implementar un sistema automatizado que detecte
+                    movimiento y genere inmediatamente señales
+                    visuales y sonoras para alertar al personal
+                    y prevenir accidentes.
+
                 </p>
 
             </div>
@@ -872,32 +1118,78 @@
 
             <div class="glass-card">
 
-                <div class="risk">
-                    <div class="risk-icon">⚠️</div>
-                    <div>
-                        <strong>Acceso no autorizado</strong>
-                        <br>
-                        <small>Una persona se aproxima o ingresa a una zona restringida.</small>
-                    </div>
-                </div>
 
                 <div class="risk">
-                    <div class="risk-icon">📡</div>
-                    <div>
-                        <strong>Detección automática</strong>
-                        <br>
-                        <small>Sensores miden distancia y detectan presencia constante.</small>
+
+                    <div class="risk-icon">
+                        ⚠️
                     </div>
+
+                    <div>
+
+                        <strong>
+                            Acceso no autorizado
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            Una persona se aproxima o ingresa a una
+                            zona restringida.
+                        </small>
+
+                    </div>
+
                 </div>
 
+
                 <div class="risk">
-                    <div class="risk-icon">🔊</div>
-                    <div>
-                        <strong>Alerta inmediata</strong>
-                        <br>
-                        <small>LEDs y buzzer comunican el peligro en tiempo real.</small>
+
+                    <div class="risk-icon">
+                        📡
                     </div>
+
+                    <div>
+
+                        <strong>
+                            Detección automática
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            Sensores miden distancia y detectan
+                            presencia constante.
+                        </small>
+
+                    </div>
+
                 </div>
+
+
+                <div class="risk">
+
+                    <div class="risk-icon">
+                        🔊
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Alerta inmediata
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            LEDs y buzzer comunican el peligro
+                            en tiempo real.
+                        </small>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -916,18 +1208,27 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 02 / Funcionamiento
             </div>
 
+
             <h2 class="section-title">
+
                 De la detección a la respuesta.
+
             </h2>
 
+
             <p class="section-description">
-                El sensor detecta movimiento o proximidad → Arduino procesa la señal → Se activan las alertas.
+
+                El sensor detecta movimiento o proximidad
+                → Arduino procesa la señal
+                → Se activan las alertas.
+
             </p>
 
         </div>
@@ -935,37 +1236,87 @@
 
         <div class="flow">
 
-            <div class="flow-card">
-                <div class="flow-number">01</div>
-                <h3>Detección</h3>
-                <p>
-                    El sensor (HC-SR04 / PIR) identifica la presencia o distancia de una persona en la zona.
-                </p>
-            </div>
 
             <div class="flow-card">
-                <div class="flow-number">02</div>
-                <h3>Procesamiento</h3>
+
+                <div class="flow-number">
+                    01
+                </div>
+
+                <h3>
+                    Detección
+                </h3>
+
                 <p>
-                    La placa Arduino Uno R3 procesa la señal enviada por el sensor en tiempo real.
+
+                    El sensor (HC-SR04 / PIR) identifica la
+                    presencia o distancia de una persona
+                    en la zona.
+
                 </p>
+
             </div>
 
-            <div class="flow-card">
-                <div class="flow-number">03</div>
-                <h3>Señal visual</h3>
-                <p>
-                    Se activan los LEDs configurados para indicar visualmente el estado del área.
-                </p>
-            </div>
 
             <div class="flow-card">
-                <div class="flow-number">04</div>
-                <h3>Alerta sonora</h3>
+
+                <div class="flow-number">
+                    02
+                </div>
+
+                <h3>
+                    Procesamiento
+                </h3>
+
                 <p>
-                    El buzzer emite un tono de advertencia audible para alertar al entorno.
+
+                    La placa Arduino Uno R3 procesa la señal
+                    enviada por el sensor en tiempo real.
+
                 </p>
+
             </div>
+
+
+            <div class="flow-card">
+
+                <div class="flow-number">
+                    03
+                </div>
+
+                <h3>
+                    Señal visual
+                </h3>
+
+                <p>
+
+                    Se activan los LEDs configurados para
+                    indicar visualmente el estado del área.
+
+                </p>
+
+            </div>
+
+
+            <div class="flow-card">
+
+                <div class="flow-number">
+                    04
+                </div>
+
+                <h3>
+                    Alerta sonora
+                </h3>
+
+                <p>
+
+                    El buzzer emite un tono de advertencia
+                    audible para alertar al entorno.
+
+                </p>
+
+            </div>
+
 
         </div>
 
@@ -982,14 +1333,18 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 03 / Niveles de seguridad
             </div>
 
+
             <h2 class="section-title">
+
                 Tres distancias. Tres respuestas.
+
             </h2>
 
         </div>
@@ -997,19 +1352,27 @@
 
         <div class="levels">
 
+
             <div class="level">
 
                 <div class="level-light green"></div>
+
 
                 <div class="distance">
                     &gt; 100 cm
                 </div>
 
-                <h3>Zona segura</h3>
+
+                <h3>
+                    Zona segura
+                </h3>
+
 
                 <p>
+
                     El LED verde permanece encendido.
                     El buzzer permanece apagado.
+
                 </p>
 
             </div>
@@ -1019,15 +1382,22 @@
 
                 <div class="level-light yellow"></div>
 
+
                 <div class="distance">
                     50 – 100 cm
                 </div>
 
-                <h3>Zona de advertencia</h3>
+
+                <h3>
+                    Zona de advertencia
+                </h3>
+
 
                 <p>
+
                     Se activa el LED amarillo y el buzzer
                     genera una alerta moderada y pausada.
+
                 </p>
 
             </div>
@@ -1037,18 +1407,26 @@
 
                 <div class="level-light red"></div>
 
+
                 <div class="distance">
                     &lt; 50 cm
                 </div>
 
-                <h3>Zona de peligro</h3>
+
+                <h3>
+                    Zona de peligro
+                </h3>
+
 
                 <p>
+
                     Se activa el LED rojo y el buzzer aumenta
                     la velocidad de su alerta.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1065,14 +1443,18 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 04 / Tecnología y Materiales
             </div>
 
+
             <h2 class="section-title">
+
                 Los componentes detrás del sistema.
+
             </h2>
 
         </div>
@@ -1080,14 +1462,22 @@
 
         <div class="components">
 
+
             <div class="component">
 
-                <div class="component-icon">🧠</div>
+                <div class="component-icon">
+                    🧠
+                </div>
 
-                <h3>Arduino Uno R3</h3>
+                <h3>
+                    Arduino Uno R3
+                </h3>
 
                 <p>
-                    Microcontrolador principal que procesa las señales y gestiona las salidas.
+
+                    Microcontrolador principal que procesa
+                    las señales y gestiona las salidas.
+
                 </p>
 
             </div>
@@ -1095,12 +1485,19 @@
 
             <div class="component">
 
-                <div class="component-icon">📡</div>
+                <div class="component-icon">
+                    📡
+                </div>
 
-                <h3>Sensores</h3>
+                <h3>
+                    Sensores
+                </h3>
 
                 <p>
-                    HC-SR04 (Ultrasónico) y Sensor PIR para medir distancia y movimiento.
+
+                    HC-SR04 (Ultrasónico) y Sensor PIR
+                    para medir distancia y movimiento.
+
                 </p>
 
             </div>
@@ -1108,12 +1505,19 @@
 
             <div class="component">
 
-                <div class="component-icon">💡</div>
+                <div class="component-icon">
+                    💡
+                </div>
 
-                <h3>LEDs y Resistencias</h3>
+                <h3>
+                    LEDs y Resistencias
+                </h3>
 
                 <p>
-                    Indicadores luminosos complementados con resistencias de protección.
+
+                    Indicadores luminosos complementados
+                    con resistencias de protección.
+
                 </p>
 
             </div>
@@ -1121,15 +1525,23 @@
 
             <div class="component">
 
-                <div class="component-icon">🔊</div>
+                <div class="component-icon">
+                    🔊
+                </div>
 
-                <h3>Buzzer y Conexiones</h3>
+                <h3>
+                    Buzzer y Conexiones
+                </h3>
 
                 <p>
-                    Zumbador acústico, Protoboard y Cables Jumper para la interconexión del circuito.
+
+                    Zumbador acústico, Protoboard y Cables
+                    Jumper para la interconexión del circuito.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1139,12 +1551,13 @@
 
 
 <!-- =====================================================
-     CIRCUITO TINKERCAD
+     CIRCUITO TINKERCAD / PROTOTIPO
 ===================================================== -->
 
 <section id="circuito">
 
     <div class="container">
+
 
         <div class="section-header">
 
@@ -1152,12 +1565,19 @@
                 05 / Prototipo
             </div>
 
+
             <h2 class="section-title">
+
                 Esquema del circuito en Tinkercad.
+
             </h2>
 
+
             <p class="section-description">
-                Diseño del prototipo desarrollado y simulado en Tinkercad Circuits con Arduino Uno R3.
+
+                Diseño del prototipo desarrollado y simulado
+                en Tinkercad Circuits con Arduino Uno R3.
+
             </p>
 
         </div>
@@ -1165,18 +1585,37 @@
 
         <div class="circuit-box">
 
+
+            <!-- =================================================
+                 IMAGEN DEL CIRCUITO SUBIDA POR EL USUARIO
+            ================================================== -->
+
             <div class="circuit-img-container">
-                <!-- Imagen del circuito integrada desde la infografía -->
-                <img src="https://i.ibb.co/L82vJ21/circuito-safezone.png" alt="Circuito Tinkercad IRTRA SafeZone">
+
+                <img
+                    src="image.png"
+                    alt="Circuito Tinkercad IRTRA SafeZone"
+                >
+
             </div>
 
-            <p style="color: #8e9aaa; margin-bottom: 20px;">
-                Visualización de las conexiones del sensor ultrasónico HC-SR04, LEDs de alerta, buzzer y resistencias conectados al Arduino Uno R3.
+
+            <p class="circuit-description">
+
+                Visualización de las conexiones del sensor
+                ultrasónico HC-SR04, LEDs de alerta, buzzer,
+                resistencias, protoboard y Arduino Uno R3.
+
             </p>
 
-            <a href="#podcast" class="btn btn-primary">
+
+            <a
+                href="#podcast"
+                class="btn btn-primary"
+            >
                 Ver documentación
             </a>
+
 
         </div>
 
@@ -1193,14 +1632,18 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 06 / Integrantes
             </div>
 
+
             <h2 class="section-title">
+
                 Equipo de desarrollo.
+
             </h2>
 
         </div>
@@ -1208,21 +1651,50 @@
 
         <div class="team">
 
-            <div class="member">
-                <div class="avatar">AL</div>
-                <div>
-                    <h3>Allison López</h3>
-                    <span>Desarrolladora del proyecto</span>
-                </div>
-            </div>
 
             <div class="member">
-                <div class="avatar">EG</div>
-                <div>
-                    <h3>Emilio Gomez</h3>
-                    <span>Desarrollador del proyecto</span>
+
+                <div class="avatar">
+                    AL
                 </div>
+
+
+                <div>
+
+                    <h3>
+                        Allison López
+                    </h3>
+
+                    <span>
+                        Desarrolladora del proyecto
+                    </span>
+
+                </div>
+
             </div>
+
+
+            <div class="member">
+
+                <div class="avatar">
+                    EG
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Emilio Gomez
+                    </h3>
+
+                    <span>
+                        Desarrollador del proyecto
+                    </span>
+
+                </div>
+
+            </div>
+
 
         </div>
 
@@ -1239,18 +1711,27 @@
 
     <div class="container">
 
+
         <div class="section-header">
 
             <div class="section-label">
                 07 / Impacto
             </div>
 
+
             <h2 class="section-title">
+
                 Tecnología con propósito.
+
             </h2>
 
+
             <p class="section-description">
-                El proyecto relaciona la automatización y la innovación tecnológica con los Objetivos de Desarrollo Sostenible.
+
+                El proyecto relaciona la automatización y la
+                innovación tecnológica con los Objetivos de
+                Desarrollo Sostenible.
+
             </p>
 
         </div>
@@ -1258,18 +1739,28 @@
 
         <div class="ods">
 
+
             <div class="ods-card">
 
                 <div class="ods-number">
                     ODS 9
                 </div>
 
+
                 <h3>
+
                     Industria, Innovación e Infraestructura
+
                 </h3>
 
+
                 <p>
-                    El proyecto promueve el uso de tecnología y automatización para desarrollar soluciones que mejoren el funcionamiento y la seguridad de determinados espacios.
+
+                    El proyecto promueve el uso de tecnología
+                    y automatización para desarrollar soluciones
+                    que mejoren el funcionamiento y la seguridad
+                    de determinados espacios.
+
                 </p>
 
             </div>
@@ -1281,15 +1772,24 @@
                     ODS 11
                 </div>
 
+
                 <h3>
+
                     Ciudades y Comunidades Sostenibles
+
                 </h3>
 
+
                 <p>
-                    La propuesta busca contribuir a una mejor gestión y seguridad de espacios públicos y recreativos utilizados por las personas.
+
+                    La propuesta busca contribuir a una mejor
+                    gestión y seguridad de espacios públicos
+                    y recreativos utilizados por las personas.
+
                 </p>
 
             </div>
+
 
         </div>
 
@@ -1306,7 +1806,9 @@
 
     <div class="container">
 
+
         <div class="podcast">
+
 
             <div class="podcast-card">
 
@@ -1314,26 +1816,54 @@
                     🎙️
                 </div>
 
+
                 <div class="section-label">
                     Podcast del proyecto
                 </div>
 
+
                 <h2 class="section-title">
+
                     Escucha cómo funciona SafeZone.
+
                 </h2>
 
+
                 <p>
-                    Conoce la problemática, el funcionamiento del circuito, sus componentes, los niveles de alerta y el impacto del proyecto explicados por el equipo.
+
+                    Conoce la problemática, el funcionamiento
+                    del circuito, sus componentes, los niveles
+                    de alerta y el impacto del proyecto
+                    explicados por el equipo.
+
                 </p>
 
-                <audio controls style="width: 100%; margin-top: 10px; filter: invert(0.9) hue-rotate(120deg);">
-                    <source src="podcast.mp3" type="audio/mpeg">
+
+                <audio
+                    controls
+                    style="
+                        width: 100%;
+                        margin-top: 10px;
+                        filter:
+                            invert(0.9)
+                            hue-rotate(120deg);
+                    "
+                >
+
+                    <source
+                        src="podcast.mp3"
+                        type="audio/mpeg"
+                    >
+
                     Tu navegador no soporta el elemento de audio.
+
                 </audio>
 
             </div>
 
+
             <div class="audio-visual">
+
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
@@ -1341,7 +1871,9 @@
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
+
             </div>
+
 
         </div>
 
@@ -1358,17 +1890,32 @@
 
     <div class="container">
 
-        <h2>IRTRA SafeZone</h2>
+
+        <h2>
+            IRTRA SafeZone
+        </h2>
+
 
         <p>
-            Innovación y automatización al servicio de la seguridad de los visitantes y colaboradores.
+
+            Innovación y automatización al servicio
+            de la seguridad de los visitantes y colaboradores.
+
         </p>
 
-        <a href="#inicio" class="btn btn-primary">Volver al inicio</a>
+
+        <a
+            href="#inicio"
+            class="btn btn-primary"
+        >
+            Volver al inicio
+        </a>
+
 
     </div>
 
 </section>
+
 
 </main>
 
@@ -1381,17 +1928,26 @@
 
     <div class="container footer-content">
 
-        <div>
-            © 2026 IRTRA SafeZone - Allison López & Emilio Gomez
-        </div>
 
         <div>
-            Sistema Autónomo de Monitoreo y Alerta
+
+            © 2026 IRTRA SafeZone -
+            Allison López & Emilio Gomez
+
         </div>
+
+
+        <div>
+
+            Sistema Autónomo de Monitoreo y Alerta
+
+        </div>
+
 
     </div>
 
 </footer>
+
 
 </body>
 </html>
