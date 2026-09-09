@@ -149,6 +149,7 @@
 
         .objective-list {
             margin-top: 20px;
+            padding-left: 20px;
         }
 
         .objective-list li {
@@ -324,6 +325,27 @@
         }
 
         /* =========================
+           REPRODUCTOR DE MÚSICA
+        ========================= */
+
+        .background-music {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            background: rgba(10, 16, 24, 0.95);
+            border: 1px solid #1d3448;
+            border-radius: 12px;
+            padding: 10px;
+            box-shadow: 0 0 15px rgba(0, 234, 255, 0.15);
+        }
+
+        .background-music audio {
+            width: 280px;
+            height: 40px;
+        }
+
+        /* =========================
            PIE DE PÁGINA
         ========================= */
 
@@ -366,6 +388,16 @@
             section h2 {
                 font-size: 28px;
             }
+
+            .background-music {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+            }
+
+            .background-music audio {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -373,10 +405,30 @@
 <body>
 
     <!-- =========================
+         MÚSICA DE FONDO
+    ========================= -->
+
+    <div class="background-music">
+
+        <audio controls loop>
+
+            <source
+                src="recursos/Michael Jordan Theme.mp3"
+                type="audio/mpeg">
+
+            Tu navegador no soporta la reproducción de audio.
+
+        </audio>
+
+    </div>
+
+
+    <!-- =========================
          NAVEGACIÓN
     ========================= -->
 
     <nav>
+
         <a href="#inicio">Inicio</a>
         <a href="#problema">Problema</a>
         <a href="#objetivos">Objetivos</a>
@@ -386,6 +438,7 @@
         <a href="#podcast">Podcast</a>
         <a href="#ods">ODS</a>
         <a href="#equipo">Equipo</a>
+
     </nav>
 
 
@@ -394,7 +447,9 @@
     ========================= -->
 
     <header id="inicio">
+
         <div class="hero">
+
             <h1>IRTRA SafeZone</h1>
 
             <h2>
@@ -405,7 +460,9 @@
                 Propuesta tecnológica orientada a mejorar la seguridad
                 en áreas restringidas o de riesgo dentro de IRTRA Petapa.
             </p>
+
         </div>
+
     </header>
 
 
@@ -451,6 +508,7 @@
         <div class="cards">
 
             <div class="card">
+
                 <h3>Objetivo general</h3>
 
                 <p>
@@ -458,12 +516,16 @@
                     identificar la presencia de personas en zonas
                     restringidas y advertir de manera inmediata.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Objetivos específicos</h3>
 
                 <ul class="objective-list">
+
                     <li>
                         Detectar la presencia de personas mediante sensores.
                     </li>
@@ -479,7 +541,9 @@
                     <li>
                         Simular el funcionamiento del sistema.
                     </li>
+
                 </ul>
+
             </div>
 
         </div>
@@ -498,6 +562,7 @@
         <div class="steps">
 
             <div class="step">
+
                 <div class="step-number">01</div>
 
                 <h3>Detección</h3>
@@ -506,10 +571,12 @@
                     El sensor detecta la presencia o movimiento
                     de una persona dentro del área monitoreada.
                 </p>
+
             </div>
 
 
             <div class="step">
+
                 <div class="step-number">02</div>
 
                 <h3>Procesamiento</h3>
@@ -518,10 +585,12 @@
                     Arduino recibe la información del sensor
                     y determina qué acción debe realizar.
                 </p>
+
             </div>
 
 
             <div class="step">
+
                 <div class="step-number">03</div>
 
                 <h3>Alerta visual</h3>
@@ -530,10 +599,12 @@
                     Se activa el indicador luminoso correspondiente
                     dependiendo de la situación detectada.
                 </p>
+
             </div>
 
 
             <div class="step">
+
                 <div class="step-number">04</div>
 
                 <h3>Alerta sonora</h3>
@@ -542,6 +613,7 @@
                     Cuando se identifica una situación de riesgo,
                     el buzzer genera una señal sonora de advertencia.
                 </p>
+
             </div>
 
         </div>
@@ -589,6 +661,7 @@
                     target="_blank">
 
                     Ver documento
+
                 </a>
 
             </div>
@@ -622,6 +695,7 @@
                 target="_blank">
 
                 Ver infografía
+
             </a>
 
         </div>
@@ -684,7 +758,9 @@
 
                 <div class="ods-number">09</div>
 
-                <h3>Industria, innovación e infraestructura</h3>
+                <h3>
+                    Industria, innovación e infraestructura
+                </h3>
 
                 <p>
                     Se utiliza tecnología y programación para desarrollar
@@ -698,7 +774,9 @@
 
                 <div class="ods-number">11</div>
 
-                <h3>Ciudades y comunidades sostenibles</h3>
+                <h3>
+                    Ciudades y comunidades sostenibles
+                </h3>
 
                 <p>
                     Promueve el uso de soluciones tecnológicas
