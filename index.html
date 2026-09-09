@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>IRTRA SafeZone</title>
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -20,6 +22,7 @@
             line-height: 1.6;
         }
 
+
         /* =========================
            BARRA DE NAVEGACIÓN
         ========================= */
@@ -29,22 +32,29 @@
             top: 0;
             left: 0;
             width: 100%;
+
             background: rgba(5, 7, 13, 0.95);
             backdrop-filter: blur(10px);
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             gap: 25px;
             padding: 18px;
+
             z-index: 1000;
+
             border-bottom: 1px solid #1c2c3d;
         }
 
         nav a {
             color: #dcecff;
             text-decoration: none;
+
             font-size: 14px;
             font-weight: bold;
+
             transition: 0.3s;
         }
 
@@ -52,19 +62,28 @@
             color: #00eaff;
         }
 
+
         /* =========================
            PORTADA
         ========================= */
 
         header {
             min-height: 100vh;
+
             display: flex;
             justify-content: center;
             align-items: center;
+
             text-align: center;
+
             padding: 100px 20px 50px;
+
             background:
-                radial-gradient(circle at center, #10263a 0%, #05070d 60%);
+                radial-gradient(
+                    circle at center,
+                    #10263a 0%,
+                    #05070d 60%
+                );
         }
 
         .hero {
@@ -73,23 +92,33 @@
 
         .hero h1 {
             font-size: 65px;
+
             color: #00eaff;
-            text-shadow: 0 0 25px rgba(0, 234, 255, 0.5);
+
+            text-shadow:
+                0 0 25px rgba(0, 234, 255, 0.5);
+
             margin-bottom: 15px;
         }
 
         .hero h2 {
             font-size: 25px;
+
             color: #ffffff;
+
             margin-bottom: 20px;
         }
 
         .hero p {
             color: #b7c9d9;
+
             font-size: 18px;
+
             max-width: 700px;
+
             margin: auto;
         }
+
 
         /* =========================
            SECCIONES
@@ -97,19 +126,25 @@
 
         section {
             max-width: 1100px;
+
             margin: auto;
+
             padding: 100px 25px;
         }
 
         section h2 {
             color: #00eaff;
+
             font-size: 35px;
+
             margin-bottom: 30px;
+
             text-align: center;
         }
 
         section h3 {
             color: #6fefff;
+
             margin-bottom: 10px;
         }
 
@@ -117,31 +152,49 @@
             color: #c7d4df;
         }
 
+
         /* =========================
            TARJETAS
         ========================= */
 
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(250px, 1fr)
+                );
+
             gap: 25px;
+
             margin-top: 30px;
         }
 
         .card {
             background: #0b111a;
+
             border: 1px solid #1d3448;
+
             border-radius: 15px;
+
             padding: 25px;
+
             transition: 0.3s;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+            box-shadow:
+                0 0 15px rgba(0, 0, 0, 0.3);
         }
 
         .card:hover {
             transform: translateY(-5px);
+
             border-color: #00eaff;
-            box-shadow: 0 0 20px rgba(0, 234, 255, 0.15);
+
+            box-shadow:
+                0 0 20px rgba(0, 234, 255, 0.15);
         }
+
 
         /* =========================
            OBJETIVOS
@@ -149,13 +202,16 @@
 
         .objective-list {
             margin-top: 20px;
+
             padding-left: 20px;
         }
 
         .objective-list li {
             margin-bottom: 12px;
+
             color: #c7d4df;
         }
+
 
         /* =========================
            FUNCIONAMIENTO
@@ -163,24 +219,38 @@
 
         .steps {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(230px, 1fr)
+                );
+
             gap: 25px;
+
             margin-top: 30px;
         }
 
         .step {
             background: #0a1018;
+
             border-left: 4px solid #00eaff;
+
             padding: 25px;
+
             border-radius: 10px;
         }
 
         .step-number {
             font-size: 35px;
+
             color: #00eaff;
+
             font-weight: bold;
+
             margin-bottom: 10px;
         }
+
 
         /* =========================
            PROTOTIPO / VIDEO
@@ -188,49 +258,72 @@
 
         .prototype-box {
             margin-top: 30px;
+
             background: #0a1018;
+
             border: 1px solid #1d3448;
+
             border-radius: 15px;
+
             padding: 25px;
+
             text-align: center;
         }
 
         .prototype-video {
             width: 100%;
+
             margin-top: 20px;
         }
 
         .prototype-video video {
             width: 100%;
+
             max-height: 600px;
+
             border-radius: 12px;
+
             border: 1px solid #24435a;
+
             background: #000000;
         }
 
         .circuit-buttons {
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
+
             margin-top: 20px;
         }
 
         .btn {
             display: inline-block;
+
             padding: 12px 22px;
+
             background: #00eaff;
+
             color: #041018;
+
             text-decoration: none;
+
             border-radius: 8px;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
         .btn:hover {
             background: #ffffff;
+
             transform: translateY(-2px);
         }
+
 
         /* =========================
            INFOGRAFÍA
@@ -238,10 +331,15 @@
 
         .infographic-box {
             background: #0a1018;
+
             border: 1px solid #1d3448;
+
             border-radius: 15px;
+
             padding: 35px;
+
             text-align: center;
+
             margin-top: 30px;
         }
 
@@ -249,23 +347,31 @@
             margin-bottom: 25px;
         }
 
+
         /* =========================
            PODCAST
         ========================= */
 
         .podcast-card {
             background: #0a1018;
+
             border: 1px solid #1d3448;
+
             border-radius: 15px;
+
             padding: 30px;
+
             margin-top: 30px;
+
             text-align: center;
         }
 
         .audio-player {
             width: 100%;
+
             margin-top: 20px;
         }
+
 
         /* =========================
            ODS
@@ -273,25 +379,40 @@
 
         .ods-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(250px, 1fr)
+                );
+
             gap: 25px;
+
             margin-top: 30px;
         }
 
         .ods-card {
             background: #0b111a;
+
             border: 1px solid #1d3448;
+
             border-radius: 15px;
+
             padding: 25px;
+
             text-align: center;
         }
 
         .ods-number {
             font-size: 45px;
+
             color: #00eaff;
+
             font-weight: bold;
+
             margin-bottom: 10px;
         }
+
 
         /* =========================
            EQUIPO
@@ -299,51 +420,71 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(280px, 1fr)
+                );
+
             gap: 25px;
+
             margin-top: 30px;
         }
 
         .team-card {
             background: #0b111a;
+
             border: 1px solid #1d3448;
+
             border-radius: 15px;
+
             padding: 30px;
+
             text-align: center;
+
             transition: 0.3s;
         }
 
         .team-card:hover {
             border-color: #00eaff;
+
             transform: translateY(-5px);
         }
 
         .team-card h3 {
             color: #00eaff;
+
             font-size: 22px;
+
             margin-bottom: 10px;
         }
 
+
         /* =========================
-           REPRODUCTOR DE MÚSICA
+           MÚSICA DE FONDO
         ========================= */
 
         .background-music {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 999;
-            background: rgba(10, 16, 24, 0.95);
-            border: 1px solid #1d3448;
-            border-radius: 12px;
-            padding: 10px;
-            box-shadow: 0 0 15px rgba(0, 234, 255, 0.15);
+
+            width: 1px;
+            height: 1px;
+
+            overflow: hidden;
+
+            opacity: 0;
+
+            pointer-events: none;
+
+            z-index: -1;
         }
 
         .background-music audio {
-            width: 280px;
-            height: 40px;
+            width: 1px;
+            height: 1px;
         }
+
 
         /* =========================
            PIE DE PÁGINA
@@ -351,11 +492,16 @@
 
         footer {
             text-align: center;
+
             padding: 35px 20px;
+
             background: #03050a;
+
             border-top: 1px solid #172635;
+
             color: #718696;
         }
+
 
         /* =========================
            RESPONSIVE
@@ -365,7 +511,9 @@
 
             nav {
                 gap: 12px;
+
                 padding: 14px 8px;
+
                 flex-wrap: wrap;
             }
 
@@ -389,20 +537,14 @@
                 font-size: 28px;
             }
 
-            .background-music {
-                bottom: 10px;
-                right: 10px;
-                left: 10px;
-            }
-
-            .background-music audio {
-                width: 100%;
-            }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- =========================
          MÚSICA DE FONDO
@@ -410,13 +552,16 @@
 
     <div class="background-music">
 
-        <audio controls loop>
+        <audio
+            id="backgroundMusic"
+            autoplay
+            loop>
 
             <source
                 src="recursos/Michael Jordan Theme.mp3"
                 type="audio/mpeg">
 
-            Tu navegador no soporta la reproducción de audio.
+            Tu navegador no soporta audio.
 
         </audio>
 
@@ -429,15 +574,41 @@
 
     <nav>
 
-        <a href="#inicio">Inicio</a>
-        <a href="#problema">Problema</a>
-        <a href="#objetivos">Objetivos</a>
-        <a href="#funcionamiento">Funcionamiento</a>
-        <a href="#prototipo">Prototipo</a>
-        <a href="#infografia">Infografía</a>
-        <a href="#podcast">Podcast</a>
-        <a href="#ods">ODS</a>
-        <a href="#equipo">Equipo</a>
+        <a href="#inicio">
+            Inicio
+        </a>
+
+        <a href="#problema">
+            Problema
+        </a>
+
+        <a href="#objetivos">
+            Objetivos
+        </a>
+
+        <a href="#funcionamiento">
+            Funcionamiento
+        </a>
+
+        <a href="#prototipo">
+            Prototipo
+        </a>
+
+        <a href="#infografia">
+            Infografía
+        </a>
+
+        <a href="#podcast">
+            Podcast
+        </a>
+
+        <a href="#ods">
+            ODS
+        </a>
+
+        <a href="#equipo">
+            Equipo
+        </a>
 
     </nav>
 
@@ -450,15 +621,18 @@
 
         <div class="hero">
 
-            <h1>IRTRA SafeZone</h1>
+            <h1>
+                IRTRA SafeZone
+            </h1>
 
             <h2>
                 Sistema inteligente de detección y alerta
             </h2>
 
             <p>
-                Propuesta tecnológica orientada a mejorar la seguridad
-                en áreas restringidas o de riesgo dentro de IRTRA Petapa.
+                Propuesta tecnológica orientada a mejorar
+                la seguridad en áreas restringidas o de
+                riesgo dentro de IRTRA Petapa.
             </p>
 
         </div>
@@ -472,24 +646,29 @@
 
     <section id="problema">
 
-        <h2>Problemática</h2>
+        <h2>
+            Problemática
+        </h2>
 
         <div class="card">
 
-            <h3>¿Cuál es el problema?</h3>
+            <h3>
+                ¿Cuál es el problema?
+            </h3>
 
             <p>
-                En determinadas áreas de IRTRA Petapa pueden existir zonas
-                restringidas o de riesgo donde el ingreso de personas
-                debe ser detectado rápidamente.
+                En determinadas áreas de IRTRA Petapa pueden
+                existir zonas restringidas o de riesgo donde
+                el ingreso de personas debe ser detectado
+                rápidamente.
             </p>
 
             <br>
 
             <p>
-                IRTRA SafeZone propone un sistema automatizado que detecta
-                movimiento o proximidad y genera una alerta mediante
-                señales luminosas y sonoras.
+                IRTRA SafeZone propone un sistema automatizado
+                que detecta movimiento o proximidad y genera
+                una alerta mediante señales luminosas y sonoras.
             </p>
 
         </div>
@@ -503,18 +682,24 @@
 
     <section id="objetivos">
 
-        <h2>Objetivos</h2>
+        <h2>
+            Objetivos
+        </h2>
 
         <div class="cards">
 
+
             <div class="card">
 
-                <h3>Objetivo general</h3>
+                <h3>
+                    Objetivo general
+                </h3>
 
                 <p>
-                    Diseñar un sistema de detección y alerta que permita
-                    identificar la presencia de personas en zonas
-                    restringidas y advertir de manera inmediata.
+                    Diseñar un sistema de detección y alerta
+                    que permita identificar la presencia de
+                    personas en zonas restringidas y advertir
+                    de manera inmediata.
                 </p>
 
             </div>
@@ -522,12 +707,15 @@
 
             <div class="card">
 
-                <h3>Objetivos específicos</h3>
+                <h3>
+                    Objetivos específicos
+                </h3>
 
                 <ul class="objective-list">
 
                     <li>
-                        Detectar la presencia de personas mediante sensores.
+                        Detectar la presencia de personas
+                        mediante sensores.
                     </li>
 
                     <li>
@@ -535,7 +723,8 @@
                     </li>
 
                     <li>
-                        Utilizar Arduino como controlador principal.
+                        Utilizar Arduino como controlador
+                        principal.
                     </li>
 
                     <li>
@@ -557,15 +746,22 @@
 
     <section id="funcionamiento">
 
-        <h2>Funcionamiento del sistema</h2>
+        <h2>
+            Funcionamiento del sistema
+        </h2>
 
         <div class="steps">
 
+
             <div class="step">
 
-                <div class="step-number">01</div>
+                <div class="step-number">
+                    01
+                </div>
 
-                <h3>Detección</h3>
+                <h3>
+                    Detección
+                </h3>
 
                 <p>
                     El sensor detecta la presencia o movimiento
@@ -577,9 +773,13 @@
 
             <div class="step">
 
-                <div class="step-number">02</div>
+                <div class="step-number">
+                    02
+                </div>
 
-                <h3>Procesamiento</h3>
+                <h3>
+                    Procesamiento
+                </h3>
 
                 <p>
                     Arduino recibe la información del sensor
@@ -591,9 +791,13 @@
 
             <div class="step">
 
-                <div class="step-number">03</div>
+                <div class="step-number">
+                    03
+                </div>
 
-                <h3>Alerta visual</h3>
+                <h3>
+                    Alerta visual
+                </h3>
 
                 <p>
                     Se activa el indicador luminoso correspondiente
@@ -605,9 +809,13 @@
 
             <div class="step">
 
-                <div class="step-number">04</div>
+                <div class="step-number">
+                    04
+                </div>
 
-                <h3>Alerta sonora</h3>
+                <h3>
+                    Alerta sonora
+                </h3>
 
                 <p>
                     Cuando se identifica una situación de riesgo,
@@ -627,20 +835,28 @@
 
     <section id="prototipo">
 
-        <h2>Prototipo</h2>
+        <h2>
+            Prototipo
+        </h2>
 
         <div class="prototype-box">
 
-            <h3>Demostración del sistema IRTRA SafeZone</h3>
+            <h3>
+                Demostración del sistema IRTRA SafeZone
+            </h3>
 
             <p>
-                A continuación se muestra una grabación de pantalla
-                donde se puede observar el funcionamiento del prototipo.
+                A continuación se muestra una grabación de
+                pantalla donde se puede observar el funcionamiento
+                del prototipo.
             </p>
+
 
             <div class="prototype-video">
 
-                <video controls>
+                <video
+                    controls
+                    preload="metadata">
 
                     <source
                         src="recursos/Grabación de pantalla 2026-09-08 211706.mp4"
@@ -677,16 +893,21 @@
 
     <section id="infografia">
 
-        <h2>Infografía</h2>
+        <h2>
+            Infografía
+        </h2>
 
         <div class="infographic-box">
 
-            <h3>IRTRA SafeZone</h3>
+            <h3>
+                IRTRA SafeZone
+            </h3>
 
             <p>
-                Consulta la infografía del proyecto para conocer
-                de manera visual sus objetivos, componentes,
-                funcionamiento y propuesta tecnológica.
+                Consulta la infografía del proyecto para
+                conocer de manera visual sus objetivos,
+                componentes, funcionamiento y propuesta
+                tecnológica.
             </p>
 
             <a
@@ -709,7 +930,9 @@
 
     <section id="podcast">
 
-        <h2>Podcast</h2>
+        <h2>
+            Podcast
+        </h2>
 
         <div class="podcast-card">
 
@@ -736,19 +959,27 @@
 
     <section id="ods">
 
-        <h2>Objetivos de Desarrollo Sostenible</h2>
+        <h2>
+            Objetivos de Desarrollo Sostenible
+        </h2>
 
         <div class="ods-grid">
 
+
             <div class="ods-card">
 
-                <div class="ods-number">03</div>
+                <div class="ods-number">
+                    03
+                </div>
 
-                <h3>Salud y bienestar</h3>
+                <h3>
+                    Salud y bienestar
+                </h3>
 
                 <p>
-                    El proyecto busca contribuir a espacios más seguros
-                    mediante sistemas de prevención y alerta.
+                    El proyecto busca contribuir a espacios
+                    más seguros mediante sistemas de prevención
+                    y alerta.
                 </p>
 
             </div>
@@ -756,15 +987,18 @@
 
             <div class="ods-card">
 
-                <div class="ods-number">09</div>
+                <div class="ods-number">
+                    09
+                </div>
 
                 <h3>
                     Industria, innovación e infraestructura
                 </h3>
 
                 <p>
-                    Se utiliza tecnología y programación para desarrollar
-                    una solución automatizada de seguridad.
+                    Se utiliza tecnología y programación para
+                    desarrollar una solución automatizada
+                    de seguridad.
                 </p>
 
             </div>
@@ -772,7 +1006,9 @@
 
             <div class="ods-card">
 
-                <div class="ods-number">11</div>
+                <div class="ods-number">
+                    11
+                </div>
 
                 <h3>
                     Ciudades y comunidades sostenibles
@@ -796,13 +1032,18 @@
 
     <section id="equipo">
 
-        <h2>Equipo de trabajo</h2>
+        <h2>
+            Equipo de trabajo
+        </h2>
 
         <div class="team-grid">
 
+
             <div class="team-card">
 
-                <h3>ALLISON LÓPEZ</h3>
+                <h3>
+                    ALLISON LÓPEZ
+                </h3>
 
                 <p>
                     Integrante del proyecto
@@ -813,7 +1054,9 @@
 
             <div class="team-card">
 
-                <h3>EMILIO GÓMEZ</h3>
+                <h3>
+                    EMILIO GÓMEZ
+                </h3>
 
                 <p>
                     Integrante del proyecto
@@ -827,7 +1070,7 @@
 
 
     <!-- =========================
-         FOOTER
+         PIE DE PÁGINA
     ========================= -->
 
     <footer>
@@ -841,6 +1084,85 @@
         </p>
 
     </footer>
+
+
+    <!-- =========================
+         SCRIPT PARA AUTOPLAY
+    ========================= -->
+
+    <script>
+
+        const backgroundMusic =
+            document.getElementById("backgroundMusic");
+
+        /*
+         * Intentamos reproducir la música
+         * automáticamente al cargar la página.
+         */
+
+        window.addEventListener("load", function () {
+
+            backgroundMusic.play().catch(function () {
+
+                /*
+                 * Algunos navegadores bloquean
+                 * el autoplay con sonido.
+                 *
+                 * Si ocurre, esperamos a que el usuario
+                 * haga cualquier interacción con la página.
+                 */
+
+                const startMusic = function () {
+
+                    backgroundMusic.play();
+
+                    document.removeEventListener(
+                        "click",
+                        startMusic
+                    );
+
+                    document.removeEventListener(
+                        "keydown",
+                        startMusic
+                    );
+
+                    document.removeEventListener(
+                        "scroll",
+                        startMusic
+                    );
+
+                    document.removeEventListener(
+                        "touchstart",
+                        startMusic
+                    );
+                };
+
+
+                document.addEventListener(
+                    "click",
+                    startMusic
+                );
+
+                document.addEventListener(
+                    "keydown",
+                    startMusic
+                );
+
+                document.addEventListener(
+                    "scroll",
+                    startMusic
+                );
+
+                document.addEventListener(
+                    "touchstart",
+                    startMusic
+                );
+
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>
